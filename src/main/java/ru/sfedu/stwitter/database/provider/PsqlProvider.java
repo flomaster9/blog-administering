@@ -75,17 +75,17 @@ public class PsqlProvider<T extends WithId> implements IDataProvider {
     }
 
     @Override
-    public void saveRecord(Object bean, EntityType type) {
+    public Result saveRecord(Object bean, EntityType type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteRecord(Object bean, EntityType type) {
+    public Result deleteRecord(Object bean, EntityType type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Object getRecordById(int id, EntityType type) {
+    public Result getRecordById(int id, EntityType type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

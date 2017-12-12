@@ -107,6 +107,7 @@ public class PsqlProviderTest {
     /**
      * Test of getRecordById method, of class PsqlProvider.
      */
+
     @Test
     public void testGetRecordById() {
         System.out.println("getRecordById");

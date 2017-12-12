@@ -42,8 +42,7 @@ public class TwitterClientTest {
     public void testLogger() {
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
-        TwitterClient obj = new TwitterClient();
-        obj.logBasicSystemInfo();
+        SimplyTwitterServer obj = new SimplyTwitterServer();
     }
     
     @Test

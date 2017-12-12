@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ru.sfedu.stwitter.database.provider;
 import com.opencsv.CSVReader;
 import com.opencsv.bean.*;
@@ -46,12 +41,14 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         return records;
     }
     
-    private void saveUserRecords(List<T> records) {
+    private Result saveUserRecords(List<T> records) {
+        Result result = null;
         try {
             writer = new FileWriter(ConfigurationUtil.getConfigurationEntry(Constants.CSV_PATH_USERS));
             beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
             beanToCsv.write(records);
             writer.close();
+            result = new Result(ResultType.SUCCESS.ordinal(), null);
         } catch (IOException ex) {
             log.info(ex);
         } catch (CsvRequiredFieldEmptyException ex) {
@@ -59,18 +56,24 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         } catch (CsvDataTypeMismatchException ex) {
             log.info(ex);
         }
+        
+        return result;
     }
     
-    private T getUserRecordById(int id) {
+    private Result getUserRecordById(int id) {
         records = getAllUserRecords();
-        return records.stream().filter(item -> item.getId() == id).findFirst().get();
+        User user = (User) records.stream().filter(item -> item.getId() == id).findFirst().orElse(null);
+        return user != null ? new Result(ResultType.SUCCESS.ordinal(), user) : 
+                new Result(ResultType.NOT_FOUND.ordinal());
     }
     
-    private void deleteUserRecord(T bean) {
+    private Result deleteUserRecord(T bean) {
         records = getAllUserRecords();
         records = records.stream().filter(item -> item.getId() != bean.getId())
                                            .collect(Collectors.toList());
-        saveUserRecords(records);
+        Result result = saveUserRecords(records);
+        result.setBean(bean);
+        return result;
     }
     
     private List<T> getAllPostRecords() {
@@ -86,12 +89,15 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         return records;
     }
     
-    private void savePostRecords(List<T> records) {
+    private Result savePostRecords(List<T> records) {
+        Result result = null;
+        
         try {
             writer = new FileWriter(ConfigurationUtil.getConfigurationEntry(Constants.CSV_PATH_POSTS));
             beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
             beanToCsv.write(records);
             writer.close();
+            result = new Result(ResultType.SUCCESS.ordinal());
         } catch (IOException ex) {
             log.info(ex);
         } catch (CsvRequiredFieldEmptyException ex) {
@@ -99,18 +105,23 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         } catch (CsvDataTypeMismatchException ex) {
             log.info(ex);
         }
+        return result;
     }
     
-    private T getPostRecordById(int id) {
+    private Result getPostRecordById(int id) {
         records = getAllPostRecords();
-        return records.stream().filter(item -> item.getId() == id).findFirst().get();
+        Post post = (Post) records.stream().filter(item -> item.getId() == id).findFirst().orElse(null);
+        return post != null ? new Result(ResultType.SUCCESS.ordinal(), post) : 
+                new Result(ResultType.NOT_FOUND.ordinal());
     }
     
-    private void deletePostRecord(T bean) {
+    private Result deletePostRecord(T bean) {
         records = getAllPostRecords();
         records = records.stream().filter(item -> item.getId() != bean.getId())
                                            .collect(Collectors.toList());
-        savePostRecords(records);
+        Result result = savePostRecords(records);
+        result.setBean(bean);
+        return result;
     }
     
     private List<T> getAllCommentRecords() {
@@ -126,12 +137,14 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         return records;
     }
     
-    private void saveCommentRecords(List<T> records) {
+    private Result saveCommentRecords(List<T> records) {
+        Result result = null;
         try {
             writer = new FileWriter(ConfigurationUtil.getConfigurationEntry(Constants.CSV_PATH_COMMENTS));
             beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
             beanToCsv.write(records);
             writer.close();
+            result = new Result(ResultType.SUCCESS.ordinal(), null);
         } catch (IOException ex) {
             log.info(ex);
         } catch (CsvRequiredFieldEmptyException ex) {
@@ -139,18 +152,25 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         } catch (CsvDataTypeMismatchException ex) {
             log.info(ex);
         }
+        
+        return result;
     }
     
-    private T getCommentRecordById(int id) {
+    private Result getCommentRecordById(int id) {
         records = getAllCommentRecords();
-        return records.stream().filter(item -> item.getId() == id).findFirst().get();
+        Comment comment = (Comment) records.stream().filter(item -> item.getId() == id).findFirst().orElse(null);
+        return comment != null ? new Result(ResultType.SUCCESS.ordinal(), comment) : 
+                new Result(ResultType.NOT_FOUND.ordinal());
+        
     }
     
-    private void deleteCommentRecord(T bean) {
+    private Result deleteCommentRecord(T bean) {
         records = getAllCommentRecords();
         records = records.stream().filter(item -> item.getId() != bean.getId())
                                            .collect(Collectors.toList());
-        saveCommentRecords(records);
+        Result result = saveCommentRecords(records);
+        result.setBean(bean);
+        return result;
     }
     
     private int getLastRecordId(List<T> records) {
@@ -158,59 +178,70 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
     }
     
     @Override
-    public void saveRecord(T bean, EntityType type) {
+    public Result saveRecord(T bean, EntityType type) {
+        Result result = null;
         switch(type) {
             case USER:
                 records = getAllUserRecords();
                 bean.setId(getLastRecordId(records));
                 records.add(bean);
-                saveUserRecords(records);
+                result = saveUserRecords(records);
                 break;
             case POST:
                 records = getAllPostRecords();
                 bean.setId(getLastRecordId(records));
                 records.add(bean);
-                savePostRecords(records);
+                result = savePostRecords(records);
                 break;
             case COMMENT:
                 records = getAllCommentRecords();
                 bean.setId(getLastRecordId(records));
                 records.add(bean);
-                saveCommentRecords(records);
+                result = saveCommentRecords(records);
                 break;
         }
+        if (result.getStatus() == ResultType.SUCCESS.ordinal()) 
+            result.setBean(bean);
+        
+        return result;
     }
 
     @Override
-    public void deleteRecord(T bean, EntityType type) {
+    public Result deleteRecord(T bean, EntityType type) {
+        Result result = getRecordById(bean.getId(), type);
+        
+        if (result.getStatus() == ResultType.NOT_FOUND.ordinal())
+            return result;
+        
         switch(type) {
             case USER:
-                deleteUserRecord(bean);
+                result = deleteUserRecord(bean);
                 break;
             case POST:
-                deletePostRecord(bean);
+                result = deletePostRecord(bean);
                 break;
             case COMMENT:
-                deleteCommentRecord(bean);
+                result = deleteCommentRecord(bean);
                 break;
         }
+        return result;
     }
 
     @Override
-    public T getRecordById(int id, EntityType type) {
-        T record = null;
+    public Result getRecordById(int id, EntityType type) {
+        Result result = null;
         switch(type) {
             case USER:
-                record = getUserRecordById(id);
+                result = getUserRecordById(id);
                 break;
             case POST:
-                record = getPostRecordById(id);
+                result = getPostRecordById(id);
                 break;
             case COMMENT:
-                record = getCommentRecordById(id);
+                result = getCommentRecordById(id);
                 break;
         }
-        return record;
+        return result;
     }
     
     @Override

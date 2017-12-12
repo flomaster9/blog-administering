@@ -16,11 +16,14 @@ public class User implements WithId {
     @CsvBindByPosition(position = 0)
     private int id;
     @CsvBindByPosition(position = 1)
+    private String login;
+    @CsvBindByPosition(position = 2)
     private String name;
 
     public User() {}
 
-    public User(String name) {
+    public User(String login, String name) {
+        this.login = login;
         this.name = name;
     }
 
@@ -34,17 +37,26 @@ public class User implements WithId {
         this.id = id;
     }
     
+    public String getLogin() {
+        return this.login;
+    }
+    
+    public void setLogin(String login) {
+        this.login = login;
+    }
+    
     public String getName() {
         return this.name;
     }
     
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String passwordHash) {
+        this.name = passwordHash;
     }
+    
 
     @Override
     public String toString() {
-        return this.id + " " + this.name;
+        return this.id + " " + this.login + " " + this.name;
     }
 }
        

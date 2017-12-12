@@ -18,7 +18,7 @@ public class Comment implements WithId {
     private int postId;
     @CsvBindByPosition(position = 2)
     private int userId;
-    @CsvBindByPosition(position = 2)
+    @CsvBindByPosition(position = 3)
     private String content;
     
     public Comment(int postId, int userId, String content) {
