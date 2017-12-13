@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="ru.sfedu.stwitter.database.provider.CsvProviderTest" time="0.68" errors="0" skipped="0">
+<testsuite tests="12" failures="0" name="ru.sfedu.stwitter.database.provider.CsvProviderTest" time="0.613" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -64,13 +64,16 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testSaveCommentRecord" time="0.027"/>
-  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="TestGetPostRecordById" time="0.095"/>
-  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testSaveUserRecord" time="0.018"/>
-  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testSavePostRecord" time="0.02"/>
-  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testDeleteCommentById" time="0.042"/>
-  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testDeleteUserById" time="0.02"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testSaveCommentRecord" time="0.031"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="TestGetPostRecordById" time="0.09"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testSaveUserRecord" time="0.004"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testSavePostRecord" time="0.007"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testUpdateUserRecord" time="0.034"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testUpdatePostRecord" time="0.054"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testDeleteCommentById" time="0.034"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testDeleteUserById" time="0.018"/>
   <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="TestGetUserRecordById" time="0.004"/>
-  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testDeletePostById" time="0.015"/>
-  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="TestGetCommentRecordById" time="0.012"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testUpdateCommentRecord" time="0.007"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="testDeletePostById" time="0.01"/>
+  <testcase classname="ru.sfedu.stwitter.database.provider.CsvProviderTest" name="TestGetCommentRecordById" time="0.006"/>
 </testsuite>

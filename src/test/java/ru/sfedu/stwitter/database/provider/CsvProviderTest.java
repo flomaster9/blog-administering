@@ -24,13 +24,12 @@ public class CsvProviderTest {
         User user = new User("GuestLogin", "GuestName");
         instance.saveRecord(user, EntityType.USER);
         userId = user.getId();
-        log.info(userId);
         
-        Post post = new Post(userId, "PostTitle", "post content");
+        Post post = new Post(userId, "New post title", "New post content");
         instance.saveRecord(post, EntityType.POST);
         postId = post.getId();
         
-        Comment comment = new Comment(userId, postId, "new comment");
+        Comment comment = new Comment(userId, postId, "New user's comment");
         instance.saveRecord(comment, EntityType.COMMENT);
         userId = user.getId();
     }
@@ -54,7 +53,7 @@ public class CsvProviderTest {
 
     @Test
     public void testSaveUserRecord() {
-        User user = new User("Guest", "Name");
+        User user = new User("GuestLogin", "GuestName");
         Result result = instance.saveRecord(user, EntityType.USER);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
@@ -67,7 +66,7 @@ public class CsvProviderTest {
     
     @Test
     public void testSavePostRecord() {
-        Post post = new Post(userId, "post title", "post content");
+        Post post = new Post(userId, "New post title", "New post content");
         Result result = instance.saveRecord(post, EntityType.POST);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
@@ -80,7 +79,7 @@ public class CsvProviderTest {
     
     @Test
     public void testSaveCommentRecord() {
-        Comment comment = new Comment(postId, userId, "comment content");
+        Comment comment = new Comment(postId, userId, "New user's comment");
         Result result = instance.saveRecord(comment, EntityType.COMMENT);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
@@ -124,6 +123,90 @@ public class CsvProviderTest {
             log.info("Could not find comment with id " + commentId);
         }
     } 
+    
+    /**
+     * Test of updateRecord methods, of class CsvProvider.
+     */
+    @Test
+    public void testUpdateUserRecord() {
+        Result result = instance.getRecordById(userId, EntityType.USER);
+        
+        
+        if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Not found user with id " + postId);
+            return;
+        } else if (result.getStatus() != ResultType.SUCCESS.ordinal()) {
+            fail("Test failure with " + result.getStatus());
+            return;
+        }
+
+        User user = (User) result.getBean();
+        user.setLogin("UpdatedGuestLogin");
+        user.setName("UpdatedGuestName");
+        result = instance.updateRecord(user, EntityType.USER);
+        
+        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
+            log.info("User with id " + result.getBean().getId() + " was updated");
+        } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Not found user with id " + userId);
+        } else {
+            fail("Test failure with " + result.getStatus());
+        }
+    }
+    
+    @Test
+    public void testUpdatePostRecord() {
+        Result result = instance.getRecordById(postId, EntityType.POST);
+        
+        if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Not found post with id " + postId);
+            return;
+        } else if (result.getStatus() != ResultType.SUCCESS.ordinal()) {
+            fail("Test failure with " + result.getStatus());
+            return;
+        }
+
+        Post post = (Post) result.getBean();
+        post.setTitle("Updated post title");
+        post.setContent("Updated post content");
+        result = instance.updateRecord(post, EntityType.POST);
+
+        if (result.getStatus() == ResultType.SUCCESS.ordinal())
+            result = instance.updateRecord(post, EntityType.POST);
+
+        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
+            log.info("Post with id " + result.getBean().getId() + " was updated");
+        } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Not found post with id " + postId);
+        } else {
+            fail("Test failure with " + result.getStatus());
+        }
+    }
+    
+    @Test
+    public void testUpdateCommentRecord() {
+        Result result = instance.getRecordById(commentId, EntityType.COMMENT);
+
+        if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Not found comment with id " + commentId);
+            return;
+        } else if (result.getStatus() != ResultType.SUCCESS.ordinal()) {
+            fail("Test failure with " + result.getStatus());
+            return;
+        }
+
+        Comment comment = (Comment) result.getBean();
+        comment.setContent("Updated user's comment");
+        result = instance.updateRecord(comment, EntityType.COMMENT);
+
+        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
+            log.info("Comment with id " + result.getBean().getId() + " was updated");
+        } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Not found comment with id " + commentId);
+        } else {
+            fail("Test failure with " + result.getStatus());
+        }
+    }
 
      /**
      * Test of deleteRecord methods, of class CsvProvider.

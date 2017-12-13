@@ -38,6 +38,12 @@ public class PsqlProvider<T extends WithId> implements IDataProvider {
         }
     }
     
+    @Override
+    public void initDataSource(EntityType type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     public void createStatement(String query) {
         if (con != null) {
             try {
@@ -83,20 +89,20 @@ public class PsqlProvider<T extends WithId> implements IDataProvider {
     public Result deleteRecord(Object bean, EntityType type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public Result updateRecord(Object bean, EntityType type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     @Override
     public Result getRecordById(int id, EntityType type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-        @Override
+    @Override
     public List<T> getAllRecords(EntityType type) {
         records = null;
         return records;
-    }
-
-    @Override
-    public void initDataSource(EntityType type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

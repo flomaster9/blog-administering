@@ -53,7 +53,11 @@ public class User implements WithId {
         this.name = passwordHash;
     }
     
-
+    public void updateWith(User object) {
+        this.setLogin(object.getLogin());
+        this.setName(object.getName());
+    }
+    
     @Override
     public String toString() {
         return this.id + " " + this.login + " " + this.name;

@@ -65,6 +65,11 @@ public class Post implements WithId {
         this.content = content;
     }
     
+    public void updateWith(Post object) {
+        this.setTitle(object.getTitle());
+        this.setContent(object.getContent());
+    }
+    
     @Override
     public String toString() {
         return this.id + " " + this.title + " " + this.content;

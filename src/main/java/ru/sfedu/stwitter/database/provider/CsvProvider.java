@@ -76,6 +76,20 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         return result;
     }
     
+    private Result updateUserRecord(T bean) {
+        records = getAllUserRecords();
+        records.stream().forEach(item -> {
+            if (item.getId() == bean.getId()) {
+                User t = (User) item;
+                t.updateWith((User) bean);
+                item = (T) t;
+            }
+        });
+        Result result = saveUserRecords(records);
+        result.setBean(bean);
+        return result;
+    }
+    
     private List<T> getAllPostRecords() {
         records = null;
         try {
@@ -119,6 +133,20 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         records = getAllPostRecords();
         records = records.stream().filter(item -> item.getId() != bean.getId())
                                            .collect(Collectors.toList());
+        Result result = savePostRecords(records);
+        result.setBean(bean);
+        return result;
+    }
+    
+    private Result updatePostRecord(T bean) {
+        records = getAllPostRecords();
+        records.stream().forEach(item -> {
+            if (item.getId() == bean.getId()) {
+                Post t = (Post) item;
+                t.updateWith((Post) bean);
+                item = (T) t;
+            }
+        });
         Result result = savePostRecords(records);
         result.setBean(bean);
         return result;
@@ -170,6 +198,23 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
                                            .collect(Collectors.toList());
         Result result = saveCommentRecords(records);
         result.setBean(bean);
+        return result;
+    }
+    
+    private Result updateCommentRecord(T bean) {
+        records = getAllCommentRecords();
+        records.stream().forEach(item -> {
+            if (item.getId() == bean.getId()) {
+                Comment t = (Comment) item;
+                t.updateWith((Comment) bean);
+                item = (T) t;
+            }
+        });
+        Result result = saveCommentRecords(records);
+        result.setBean(bean);
+        log.info("fasfsaf");
+        log.info(result);
+        log.info("fasf");
         return result;
     }
     
@@ -241,6 +286,29 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
                 result = getCommentRecordById(id);
                 break;
         }
+        return result;
+    }
+    
+    @Override
+    public Result updateRecord(T bean, EntityType type) {
+        Result result = getRecordById(bean.getId(), type);
+        
+        if (result.getStatus() == ResultType.NOT_FOUND.ordinal())
+            return result;
+        
+        switch(type) {
+            case USER:
+                result = updateUserRecord(bean);
+                break;
+            case POST:
+                result = updatePostRecord(bean);
+                break;
+            case COMMENT:
+                log.info("qweqwrww");
+                result = updateCommentRecord(bean);
+                break;
+        }
+
         return result;
     }
     

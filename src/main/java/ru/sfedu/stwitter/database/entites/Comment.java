@@ -61,6 +61,10 @@ public class Comment implements WithId {
         this.content = content;
     }
     
+    public void updateWith(Comment object) {
+        this.setContent(object.getContent());
+    }
+    
     @Override
     public String toString() {
         return this.id + " " + this.content + " ";
