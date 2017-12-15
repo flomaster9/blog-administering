@@ -48,11 +48,8 @@ public class TwitterClientTest {
     @Test
     public void testJDBC() {
         // TODO review the generated test code and remove the default call to fail.
-        PsqlProvider instance = PsqlProvider.getInstance();
         
-        instance.createStatement("SELECT * FROM users");
         
-        instance.closeConnection();
                 
     }
     

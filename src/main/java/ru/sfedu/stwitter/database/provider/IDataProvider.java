@@ -13,9 +13,9 @@ import java.util.List;
  */
 public abstract interface IDataProvider<T> { 
     public Result saveRecord(T bean, EntityType type);
-    public Result deleteRecord(T bean, EntityType type);
     public Result updateRecord(T bean, EntityType type);
+    public Result deleteRecord(int id, EntityType type);
     public Result getRecordById(int id, EntityType type);
     public List<T> getAllRecords(EntityType type);
-    public void initDataSource(EntityType type);
+    public void initDataSource();
 }

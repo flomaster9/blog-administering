@@ -41,16 +41,16 @@ public class Comment implements WithId {
         return this.postId;
     }
     
-    public void setPostId(int userId) {
-        this.postId = userId;
+    public void setPostId(int postId) {
+        this.postId = postId;
     }
     
     public int getUserId() {
-        return this.postId;
+        return this.userId;
     }
     
     public void setUserId(int userId) {
-        this.postId = userId;
+        this.userId = userId;
     }
         
     public String getContent() {
@@ -67,6 +67,6 @@ public class Comment implements WithId {
     
     @Override
     public String toString() {
-        return this.id + " " + this.content + " ";
+        return "'" + postId + "', '" + userId  + "', '" + content + "'";
     }
 }

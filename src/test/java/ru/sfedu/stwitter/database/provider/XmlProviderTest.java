@@ -11,12 +11,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import ru.sfedu.stwitter.database.entites.*;
 
 /**
  *
  * @author daniel
  */
 public class XmlProviderTest {
+    
+    XmlProvider instance = new XmlProvider();
+    Result result;
     
     public XmlProviderTest() {
     }
@@ -38,9 +42,9 @@ public class XmlProviderTest {
     }
 
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void getUserById() {
+        result = instance.getRecordById(1, EntityType.USER);
+        System.out.println((User) result.getBean());
     }
     
 }

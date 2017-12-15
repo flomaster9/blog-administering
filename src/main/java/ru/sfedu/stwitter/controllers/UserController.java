@@ -74,7 +74,7 @@ public class UserController {
             if (result.getBean() == null) {
                 result = new Result(ResultType.NOT_FOUND.ordinal());
             } else {
-                result = instanse.deleteRecord((User) result.getBean(), EntityType.USER);
+                result = instanse.deleteRecord(id, EntityType.USER);
             }
             
             String responseJson = JSON.stringify(result);

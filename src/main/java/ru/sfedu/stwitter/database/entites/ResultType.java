@@ -10,6 +10,6 @@ package ru.sfedu.stwitter.database.entites;
  * @author daniel
  */
 public enum ResultType {
-    SUCCESS, WARNING, FAILURE, NOT_FOUND
+    SUCCESS, WARNING, FAILURE, NOT_FOUND, SQL_EXCEPTION
 }
 

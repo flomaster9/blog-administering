@@ -21,17 +21,18 @@ public class CsvProviderTest {
     
     @BeforeClass
     public static void setUpClass() {
+        Result result;
         User user = new User("GuestLogin", "GuestName");
-        instance.saveRecord(user, EntityType.USER);
-        userId = user.getId();
+        result = instance.saveRecord(user, EntityType.USER);
+        userId = result.getBean().getId();
         
         Post post = new Post(userId, "New post title", "New post content");
-        instance.saveRecord(post, EntityType.POST);
-        postId = post.getId();
+        result = instance.saveRecord(post, EntityType.POST);
+        postId = result.getBean().getId();
         
         Comment comment = new Comment(userId, postId, "New user's comment");
-        instance.saveRecord(comment, EntityType.COMMENT);
-        userId = user.getId();
+        result = instance.saveRecord(comment, EntityType.COMMENT);
+        userId  = result.getBean().getId();
     }
     
     @AfterClass
@@ -217,14 +218,14 @@ public class CsvProviderTest {
         Result result = instance.getRecordById(userId, EntityType.USER);
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal())
-            result = instance.deleteRecord((User) result.getBean(), EntityType.USER);
+            result = instance.deleteRecord(userId, EntityType.USER);
         else {
             log.info("Not found user with id " + userId);
             return;
         }
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
-            log.info("User with id " + result.getBean().getId() + " was deleted");
+            log.info("User with id " + userId + " was deleted");
         } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
             log.info("Not found user with id " + userId);
         } else {
@@ -237,14 +238,14 @@ public class CsvProviderTest {
         Result result = instance.getRecordById(postId, EntityType.POST);
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal())
-            result = instance.deleteRecord((Post) result.getBean(), EntityType.POST);
+            result = instance.deleteRecord(postId, EntityType.POST);
         else {
             log.info("Not found post with id " + postId);
             return;
         }
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
-            log.info("Post with id " + result.getBean().getId() + " was deleted");
+            log.info("Post with id " + postId + " was deleted");
         } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
             log.info("Not found post with id " + postId);
         } else {
@@ -257,14 +258,14 @@ public class CsvProviderTest {
         Result result = instance.getRecordById(commentId, EntityType.COMMENT);
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal())
-            result = instance.deleteRecord((Comment) result.getBean(), EntityType.COMMENT);
+            result = instance.deleteRecord(commentId, EntityType.COMMENT);
         else {
             log.info("Not found comment with id " + commentId);
             return;
         }
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
-            log.info("Comment with id " + result.getBean().getId() + " was deleted");
+            log.info("Comment with id " + commentId + " was deleted");
         } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
             log.info("Not found comment with id " + commentId);
         } else {

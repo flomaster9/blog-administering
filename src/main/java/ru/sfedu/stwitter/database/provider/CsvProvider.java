@@ -67,12 +67,11 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
                 new Result(ResultType.NOT_FOUND.ordinal());
     }
     
-    private Result deleteUserRecord(T bean) {
+    private Result deleteUserRecord(int id) {
         records = getAllUserRecords();
-        records = records.stream().filter(item -> item.getId() != bean.getId())
+        records = records.stream().filter(item -> item.getId() != id)
                                            .collect(Collectors.toList());
         Result result = saveUserRecords(records);
-        result.setBean(bean);
         return result;
     }
     
@@ -129,12 +128,11 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
                 new Result(ResultType.NOT_FOUND.ordinal());
     }
     
-    private Result deletePostRecord(T bean) {
+    private Result deletePostRecord(int id) {
         records = getAllPostRecords();
-        records = records.stream().filter(item -> item.getId() != bean.getId())
+        records = records.stream().filter(item -> item.getId() != id)
                                            .collect(Collectors.toList());
         Result result = savePostRecords(records);
-        result.setBean(bean);
         return result;
     }
     
@@ -192,12 +190,11 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         
     }
     
-    private Result deleteCommentRecord(T bean) {
+    private Result deleteCommentRecord(int id) {
         records = getAllCommentRecords();
-        records = records.stream().filter(item -> item.getId() != bean.getId())
+        records = records.stream().filter(item -> item.getId() != id)
                                            .collect(Collectors.toList());
         Result result = saveCommentRecords(records);
-        result.setBean(bean);
         return result;
     }
     
@@ -212,9 +209,6 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         });
         Result result = saveCommentRecords(records);
         result.setBean(bean);
-        log.info("fasfsaf");
-        log.info(result);
-        log.info("fasf");
         return result;
     }
     
@@ -252,23 +246,21 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
     }
 
     @Override
-    public Result deleteRecord(T bean, EntityType type) {
-        Result result = getRecordById(bean.getId(), type);
+    public Result deleteRecord(int id, EntityType type) {
+        Result result = getRecordById(id, type);
         
         if (result.getStatus() == ResultType.NOT_FOUND.ordinal())
             return result;
         
         switch(type) {
             case USER:
-                result = deleteUserRecord(bean);
-                break;
+                return deleteUserRecord(id);
             case POST:
-                result = deletePostRecord(bean);
-                break;
+                return deletePostRecord(id);
             case COMMENT:
-                result = deleteCommentRecord(bean);
-                break;
+                return deleteCommentRecord(id);
         }
+        result.setStatus(ResultType.FAILURE.ordinal());
         return result;
     }
 
@@ -277,15 +269,13 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         Result result = null;
         switch(type) {
             case USER:
-                result = getUserRecordById(id);
-                break;
+                return getUserRecordById(id);
             case POST:
-                result = getPostRecordById(id);
-                break;
+                return getPostRecordById(id);
             case COMMENT:
-                result = getCommentRecordById(id);
-                break;
+                return getCommentRecordById(id);
         }
+        result.setStatus(ResultType.FAILURE.ordinal());
         return result;
     }
     
@@ -298,17 +288,13 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         
         switch(type) {
             case USER:
-                result = updateUserRecord(bean);
-                break;
+                return updateUserRecord(bean);
             case POST:
-                result = updatePostRecord(bean);
-                break;
+                return updatePostRecord(bean);
             case COMMENT:
-                log.info("qweqwrww");
-                result = updateCommentRecord(bean);
-                break;
+                return updateCommentRecord(bean);
         }
-
+        result.setStatus(ResultType.FAILURE.ordinal());
         return result;
     }
     
@@ -330,6 +316,6 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
     }
 
     @Override
-    public void initDataSource(EntityType type) {}
+    public void initDataSource() {}
     
 }

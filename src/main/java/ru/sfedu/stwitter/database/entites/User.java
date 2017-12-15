@@ -7,16 +7,24 @@ package ru.sfedu.stwitter.database.entites;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
 import com.opencsv.bean.CsvCustomBindByPosition;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 /**
  *
  * @author daniel
  */
+
+@Root(name="user")
 public class User implements WithId {
+    @Element(name = "id")
     @CsvBindByPosition(position = 0)
     private int id;
+    @Element(name = "login")
     @CsvBindByPosition(position = 1)
     private String login;
+    @Element(name = "name")
     @CsvBindByPosition(position = 2)
     private String name;
 
@@ -49,8 +57,8 @@ public class User implements WithId {
         return this.name;
     }
     
-    public void setName(String passwordHash) {
-        this.name = passwordHash;
+    public void setName(String name) {
+        this.name = name;
     }
     
     public void updateWith(User object) {
@@ -60,7 +68,7 @@ public class User implements WithId {
     
     @Override
     public String toString() {
-        return this.id + " " + this.login + " " + this.name;
+        return "'" + login + "', '" + name + "'";
     }
 }
        

@@ -6,6 +6,7 @@
 
 package ru.sfedu.stwitter.database.provider;
 import java.sql.*;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import org.apache.log4j.Logger;
 import ru.sfedu.stwitter.database.entites.*;
@@ -15,94 +16,275 @@ import java.util.List;
  *
  * @author daniel
  */
-public class PsqlProvider<T extends WithId> implements IDataProvider {
+public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
     
     private static PsqlProvider instance;
     private static Logger log = Logger.getLogger(PsqlProvider.class);
     
-    private Connection con = null;
+    private Connection conn;
+    Statement statement;
     
-    private String url = "jdbc:postgresql://localhost:5432/simply_twitter";
-    private String login = "daniel";
-    private String password = "111";
+    private String url;
+    private String login;
+    private String password;
     
     private List<T> records;
     
-    private PsqlProvider() {
-        try {
-            Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection(url, login, password);
-        } catch (Exception ex) {
-            log.info("Error connection");
-            log.info("Exception: " + ex);
-        }
+    public PsqlProvider() {
+        initDataSource();
     }
     
     @Override
-    public void initDataSource(EntityType type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    public void createStatement(String query) {
-        if (con != null) {
-            try {
-                Statement statemant = con.createStatement();
-                ResultSet result = statemant.executeQuery(query);
-                while (result.next()) {
-                    String str = result.getString("name");
-                    log.info("String in row: " + str);
-                }
-            } catch (Exception ex) {
-                log.info("Error in create statement: " + ex);
-            }
+    public void initDataSource() {
+        url = "jdbc:postgresql://localhost:5432/simply_twitter";
+        login = "daniel";
+        password = "111";
+       
+        try {
+            Class.forName("org.postgresql.Driver");
+            conn = DriverManager.getConnection(url, login, password);
+            statement = conn.createStatement();
+        } catch (Exception ex) {
+            log.error("Error connection");
+            log.error("Exception: " + ex);
         }
     }
     
     public void closeConnection() {
-        if (con != null) {
+        if (conn != null) {
             try {
-                con.close();
+                conn.close();
+                statement.close();
             } catch (Exception ex) {
-                log.info("Error in close connection: " + ex);
+                log.error("Error in close connection: " + ex);
             }
         }
     }
-    
-    public static PsqlProvider getInstance() {
-        if (instance == null) {
-            synchronized (PsqlProvider.class) {
-               if (instance == null) {
-                   instance = new PsqlProvider();
-               } 
-            }
+
+    @Override
+    public Result saveRecord(T bean, EntityType type){
+        String query = "";
+        switch (type){
+            case USER:
+                query = "INSERT INTO users(login, name)" +
+                        " VALUES (" + bean.toString() + ");";
+                break;
+            case POST:
+                query = "INSERT INTO posts(user_id, title, content)" +
+                        " VALUES (" + bean.toString() + ");";
+                break;
+            case COMMENT:
+                query = "INSERT INTO comments(post_id, user_id, content)" +
+                        " VALUES (" + bean.toString() + ");";
+                break;
         }
-        return instance;
+        try {
+            statement.executeUpdate(query);
+        } catch (SQLException e){
+            log.error(e);
+            return new Result(ResultType.SQL_EXCEPTION.ordinal());
+        }
+        return new Result(ResultType.SUCCESS.ordinal(), bean);
     }
 
     @Override
-    public Result saveRecord(Object bean, EntityType type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Result deleteRecord(Object bean, EntityType type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Result deleteRecord(int id, EntityType type){
+        String query = "";
+        Result result = getRecordById(id, type);
+        
+        if (result.getStatus() != ResultType.SUCCESS.ordinal())
+            return result;
+        
+        switch (type){
+            case USER:
+                query = "DELETE FROM users WHERE id = " + id;
+                break;
+            case POST:
+                query = "DELETE FROM posts WHERE id = " + id;
+                break;
+            case COMMENT:
+                query = "DELETE FROM comments WHERE id = " + id;
+                break;
+        }
+        try {
+            statement.executeUpdate(query);
+        } catch (SQLException e){
+            log.error(e);
+            return new Result(ResultType.SQL_EXCEPTION.ordinal());
+        }
+        return new Result(ResultType.SUCCESS.ordinal(), result.getBean());
     }
     
     @Override
-    public Result updateRecord(Object bean, EntityType type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Result updateRecord(T bean, EntityType type) {
+        Result result = getRecordById(bean.getId(), type);
+        
+        if (result.getStatus() != ResultType.SUCCESS.ordinal())
+            return result;
+        
+        String query = "";
+        
+        switch (type){
+            case USER:
+                query = "UPDATE users set (login, name) = (" + bean.toString() + ") where id = " + bean.getId() + ";";
+                break;
+            case POST:
+                query = "UPDATE posts set (user_id, title, content) = (" + bean.toString() + ") where id = " + bean.getId() + ";";
+                break;
+            case COMMENT:
+                query = "UPDATE comment set (post_id, user_id, content) = (" + bean.toString() + ") where id = " + bean.getId() + ";";
+                break;
+        }
+        
+        try {
+            statement.executeUpdate(query);
+            result.setBean(bean);
+            return result;
+        } catch (SQLException e){
+            log.error(e);
+            return new Result(ResultType.SQL_EXCEPTION.ordinal());
+        }
+    }
+    
+    private Result getUserRecordById(int id){
+        String query = "SELECT * FROM users WHERE id = " + id;
+        ResultSet resultSet;
+        User user = new User();
+        try {
+            resultSet = statement.executeQuery(query);
+            resultSet.next();
+            user.setId(resultSet.getInt("id"));
+            user.setLogin(resultSet.getString("login"));
+            user.setName(resultSet.getString("name"));
+        } catch (SQLException e){
+            log.error(e);
+            return new Result(ResultType.SQL_EXCEPTION.ordinal());
+        }
+        return new Result(ResultType.SUCCESS.ordinal(), user);
+    }
+    
+    private Result getPostRecordById(int id){
+        String query = "SELECT * FROM posts WHERE id = " + id;
+        ResultSet resultSet;
+        Post post = new Post();
+        try {
+            resultSet = statement.executeQuery(query);
+            resultSet.next();
+            post.setId(resultSet.getInt("id"));
+            post.setUserId(resultSet.getInt("user_id"));
+            post.setTitle(resultSet.getString("title"));
+            post.setContent(resultSet.getString("content"));
+        } catch (SQLException e){
+            log.error(e);
+            return new Result(ResultType.SQL_EXCEPTION.ordinal());
+        }
+        return new Result(ResultType.SUCCESS.ordinal(), post);
+    }
+    
+    private Result getCommentRecordById(int id){
+        String query = "SELECT * FROM comments WHERE id = " + id;
+        ResultSet resultSet;
+        Comment comment = new Comment();
+        try {
+            resultSet = statement.executeQuery(query);
+            resultSet.next();
+            comment.setId(resultSet.getInt("id"));
+            comment.setPostId(resultSet.getInt("post_id"));
+            comment.setUserId(resultSet.getInt("user_id"));
+            comment.setContent(resultSet.getString("content"));
+        } catch (SQLException e){
+            log.error(e);
+            return new Result(ResultType.SQL_EXCEPTION.ordinal());
+        }
+        return new Result(ResultType.SUCCESS.ordinal(), comment);
     }
 
     @Override
-    public Result getRecordById(int id, EntityType type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Result getRecordById(int id, EntityType type){
+        Result result = null;
+        switch (type){
+            case USER:
+                return getUserRecordById(id);
+            case POST:
+                return getPostRecordById(id);
+            case COMMENT:
+                return getCommentRecordById(id);
+        }
+        return new Result(ResultType.FAILURE.ordinal());
+    }
+    
+    
+    private List<T> getAllUserRecords() {
+        records = new LinkedList<T>();
+        String query = "Select * from users";
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                User user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setLogin(resultSet.getString("login"));
+                user.setName(resultSet.getString("name"));
+                if (user == null) break;
+                records.add((T) user);
+            }
+        } catch (SQLException e){
+            log.error(e);
+        }
+        return records;
+    }
+    
+    private List<T> getAllPostRecords() {
+        records = new LinkedList<T>();
+        String query = "Select * from posts";
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                Post post = new Post();
+                post.setId(resultSet.getInt("id"));
+                post.setUserId(resultSet.getInt("user_id"));
+                post.setTitle(resultSet.getString("title"));
+                post.setContent(resultSet.getString("content"));
+                if (post == null) break;
+                records.add((T) post);
+            }
+        } catch (SQLException e){
+            log.error(e);
+        }
+        return records;
+    }
+        
+    private List<T> getAllCommentRecords() {
+        records = new LinkedList<T>();
+        String query = "Select * from comments";
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                Comment comment = new Comment();
+                comment.setId(resultSet.getInt("id"));
+                comment.setPostId(resultSet.getInt("post_id"));
+                comment.setUserId(resultSet.getInt("user_id"));
+                comment.setContent(resultSet.getString("content"));
+                if (comment == null) break;
+                records.add((T) comment);
+            }
+        } catch (SQLException e){
+            log.error(e);
+        }
+        return records;
     }
     
     @Override
     public List<T> getAllRecords(EntityType type) {
-        records = null;
+        records = new LinkedList<T>();
+
+        switch (type){
+            case USER:
+                return getAllUserRecords();
+            case POST:
+                return getAllPostRecords();
+            case COMMENT:
+                return getAllCommentRecords();
+        }
         return records;
     }
 }

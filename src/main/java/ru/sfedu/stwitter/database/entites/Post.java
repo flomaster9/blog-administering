@@ -72,6 +72,6 @@ public class Post implements WithId {
     
     @Override
     public String toString() {
-        return this.id + " " + this.title + " " + this.content;
+        return "'" + userId + "', '" + title + "', '" + content + "'";
     }
 }
