@@ -23,4 +23,8 @@
       <title>New post title</title>
       <content>New post content</content>
    </post>
+   <post Id="10" UserId="10">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
 </beans>

@@ -14,4 +14,7 @@
    <comment Id="11" PostId="9" UserId="9">
       <content>New user comment</content>
    </comment>
+   <comment Id="12" PostId="10" UserId="10">
+      <content>New user comment</content>
+   </comment>
 </beans>

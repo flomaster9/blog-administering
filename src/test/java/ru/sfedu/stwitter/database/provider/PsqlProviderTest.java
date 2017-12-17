@@ -36,15 +36,15 @@ public class PsqlProviderTest {
         Result result;
         User user = new User("GuestLogin", "GuestName");
         result = instance.saveRecord(user, EntityType.USER);
-//        userId = result.getBean().getId();
-        
+        userId = result.getBean().getId();
+
         Post post = new Post(userId, "New post title", "New post content");
         result = instance.saveRecord(post, EntityType.POST);
-//        postId = result.getBean().getId();
+        postId = result.getBean().getId();
         
-        Comment comment = new Comment(userId, postId, "New user comment");
+        Comment comment = new Comment(postId, userId, "New user comment");
         result = instance.saveRecord(comment, EntityType.COMMENT);
-//        userId  = result.getBean().getId();
+        commentId = result.getBean().getId();
     }
     
     @AfterClass
@@ -70,7 +70,8 @@ public class PsqlProviderTest {
         Result result = instance.saveRecord(user, EntityType.USER);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
-//            userId = user.getId();
+            user = (User) result.getBean();
+            userId = user.getId();
             log.info("User with id " + user.getId() + " was saved");
         } else {
             fail("Test failure with " + result.getStatus());
@@ -83,8 +84,11 @@ public class PsqlProviderTest {
         Result result = instance.saveRecord(post, EntityType.POST);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
-//            postId = post.getId();
+            post = (Post) result.getBean();
+            postId = post.getId();
             log.info("Post with id " + post.getId() + " was saved");
+        } else if(result.getStatus() == ResultType.SQL_EXCEPTION.ordinal()) {
+            log.info("User with id " + userId + " is missing");
         } else {
             fail("Test failure with " + result.getStatus());
         }  
@@ -96,8 +100,11 @@ public class PsqlProviderTest {
         Result result = instance.saveRecord(comment, EntityType.COMMENT);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
-//            commentId = comment.getId();
+            comment = (Comment) result.getBean();
+            commentId = comment.getId();
             log.info("Comment with id " + comment.getId() + " was saved");
+        } else if(result.getStatus() == ResultType.SQL_EXCEPTION.ordinal()) {
+            log.info("User with id " + userId + ", or post with id" + postId +" is missing");
         } else {
             fail("Test failure with " + result.getStatus());
         }
@@ -225,64 +232,64 @@ public class PsqlProviderTest {
      * Test of deleteRecord methods, of class CsvProvider.
      */
     
-//    @Test 
-//    public void testDeleteUserById() {
-//        Result result = instance.getRecordById(userId, EntityType.USER);
-//        
-//        if (result.getStatus() == ResultType.SUCCESS.ordinal())
-//            result = instance.deleteRecord(userId, EntityType.USER);
-//        else {
-//            log.info("Not found user with id " + userId);
-//            return;
-//        }
-//        
-//        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
-//            log.info("User with id " + userId + " was deleted");
-//        } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
-//            log.info("Not found user with id " + userId);
-//        } else {
-//            fail("Test failure with " + result.getStatus());
-//        }
-//    }
-//    
-//    @Test 
-//    public void testDeletePostById() {
-//        Result result = instance.getRecordById(postId, EntityType.POST);
-//        
-//        if (result.getStatus() == ResultType.SUCCESS.ordinal())
-//            result = instance.deleteRecord(postId, EntityType.POST);
-//        else {
-//            log.info("Not found post with id " + postId);
-//            return;
-//        }
-//        
-//        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
-//            log.info("Post with id " + postId + " was deleted");
-//        } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
-//            log.info("Not found post with id " + postId);
-//        } else {
-//            fail("Test failure with " + result.getStatus());
-//        }
-//    }
-//    
-//    @Test 
-//    public void testDeleteCommentById() {
-//        Result result = instance.getRecordById(commentId, EntityType.COMMENT);
-//        
-//        if (result.getStatus() == ResultType.SUCCESS.ordinal())
-//            result = instance.deleteRecord(commentId, EntityType.COMMENT);
-//        else {
-//            log.info("Not found comment with id " + commentId);
-//            return;
-//        }
-//        
-//        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
-//            log.info("Comment with id " + commentId + " was deleted");
-//        } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
-//            log.info("Not found comment with id " + commentId);
-//        } else {
-//            fail("Test failure with " + result.getStatus());
-//        }
-//    }  
+    @Test 
+    public void testDeleteUserById() {
+        Result result = instance.getRecordById(userId, EntityType.USER);
+        
+        if (result.getStatus() == ResultType.SUCCESS.ordinal())
+            result = instance.deleteRecord(userId, EntityType.USER);
+        else {
+            log.info("Not found user with id " + userId);
+            return;
+        }
+        
+        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
+            log.info("User with id " + userId + " was deleted");
+        } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Not found user with id " + userId);
+        } else {
+            fail("Test failure with " + result.getStatus());
+        }
+    }
+    
+    @Test 
+    public void testDeletePostById() {
+        Result result = instance.getRecordById(postId, EntityType.POST);
+        
+        if (result.getStatus() == ResultType.SUCCESS.ordinal())
+            result = instance.deleteRecord(postId, EntityType.POST);
+        else {
+            log.info("Not found post with id " + postId);
+            return;
+        }
+        
+        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
+            log.info("Post with id " + postId + " was deleted");
+        } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Not found post with id " + postId);
+        } else {
+            fail("Test failure with " + result.getStatus());
+        }
+    }
+    
+    @Test 
+    public void testDeleteCommentById() {
+        Result result = instance.getRecordById(commentId, EntityType.COMMENT);
+        
+        if (result.getStatus() == ResultType.SUCCESS.ordinal())
+            result = instance.deleteRecord(commentId, EntityType.COMMENT);
+        else {
+            log.info("Not found comment with id " + commentId);
+            return;
+        }
+        
+        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
+            log.info("Comment with id " + commentId + " was deleted");
+        } else if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Not found comment with id " + commentId);
+        } else {
+            fail("Test failure with " + result.getStatus());
+        }
+    }  
          
 }

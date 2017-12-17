@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import org.apache.log4j.Logger;
 import ru.sfedu.stwitter.database.entites.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -59,6 +60,22 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
             }
         }
     }
+    
+    private T getSavedRecord(EntityType type) {
+        List<T> list = null;
+        switch (type){
+            case USER:
+                list = getAllUserRecords();
+                break;
+            case POST:
+                list = getAllPostRecords();
+                break;
+            case COMMENT:
+                list = getAllCommentRecords();
+                break;
+        }
+        return list.get(list.size() - 1);
+    }
 
     @Override
     public Result saveRecord(T bean, EntityType type){
@@ -83,7 +100,44 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
             log.error(e);
             return new Result(ResultType.SQL_EXCEPTION.ordinal());
         }
-        return new Result(ResultType.SUCCESS.ordinal(), bean);
+        return new Result(ResultType.SUCCESS.ordinal(), getSavedRecord(type));
+    }
+    
+    private Result dependencyDestroy(int id, EntityType type) {
+        List<T> postRecords = null;
+        List<T> commentRecords = null;
+        Result result = null;
+        switch (type){
+            case USER:
+                getAllPostRecords().stream().forEach(t -> {
+                    Post post = (Post) t;
+                    if (post.getUserId() == id) {
+                        dependencyDestroy(post.getId(), EntityType.POST);
+                        deleteRecord(post.getId(), EntityType.POST);
+                    }
+                });
+                
+                getAllCommentRecords().stream().forEach(t -> {
+                    Comment comment = (Comment) t;
+                    if (comment.getUserId() == id) {
+                        deleteRecord(comment.getId(), EntityType.COMMENT);
+                    }
+                });
+                
+                return new Result(ResultType.SUCCESS.ordinal());
+            case POST:
+                getAllCommentRecords().stream().forEach(t -> {
+                    Comment comment = (Comment) t;
+                    if (comment.getPostId() == id) 
+                        deleteRecord(comment.getId(), EntityType.COMMENT);
+                });
+                
+                return new Result(ResultType.SUCCESS.ordinal());
+            case COMMENT:
+                return new Result(ResultType.SUCCESS.ordinal());
+        }
+        
+        return new Result(ResultType.FAILURE.ordinal());
     }
 
     @Override
@@ -96,9 +150,11 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
         
         switch (type){
             case USER:
+                dependencyDestroy(id, EntityType.USER);
                 query = "DELETE FROM users WHERE id = " + id;
                 break;
             case POST:
+                dependencyDestroy(id, EntityType.POST);
                 query = "DELETE FROM posts WHERE id = " + id;
                 break;
             case COMMENT:
