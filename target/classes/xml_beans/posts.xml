@@ -1,0 +1,26 @@
+<beans>
+   <post Id="4" UserId="4">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
+   <post Id="5" UserId="5">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
+   <post Id="6" UserId="6">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
+   <post Id="7" UserId="7">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
+   <post Id="8" UserId="8">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
+   <post Id="9" UserId="9">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
+</beans>

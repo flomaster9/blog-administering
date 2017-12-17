@@ -1,4 +1,103 @@
-12.16:22.04.53 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:61 - 
-12.16:22.07.31 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:61 - 
-12.16:22.09.01 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:62 - 
-12.16:22.11.54 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:61 - 
+12.17:14.28.11 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:228 - User with id 1 was deleted
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.31.22 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:228 - User with id 1 was deleted
+12.17:14.34.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:223 - Not found user with id 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.35.42 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:228 - User with id 1 was deleted
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:266 - 1
+12.17:14.39.30 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:228 - User with id 1 was deleted
+12.17:14.48.47 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:228 - User with id 1 was deleted
+12.17:14.50.23 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:228 - User with id 1 was deleted
+12.17:14.56.12 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:234 - Not found user with id 8
+12.17:14.56.38 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:239 - User with id 9 was deleted
+12.17:14.57.52 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:239 - User with id 10 was deleted
+12.17:14.59.05 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:239 - User with id 11 was deleted

@@ -8,8 +8,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.Reader;
 import java.io.StringReader;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.stream.Collectors;
 import org.apache.log4j.Logger;
 import ru.sfedu.stwitter.database.entites.*;
 import org.simpleframework.xml.Serializer;
@@ -20,69 +23,291 @@ import ru.sfedu.stwitter.utils.ConfigurationUtil;
  *
  * @author daniel
  */
-public class XmlProvider<T extends WithId> implements IDataProvider {
+public class XmlProvider<T extends WithId> implements IDataProvider<T> {
     
     protected static Logger log = Logger.getLogger(XmlProvider.class);
-    private Serializer serializer;
-
-    private String users_path;
-    private String projects_path;
-    private String tasks_path;
-    private File file;
+    private Serializer serializer = new Persister();
     
     @Override
-    public void initDataSource() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void initDataSource() {}
 
-    @Override
-    public Result saveRecord(Object bean, EntityType type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Result deleteRecord(int id, EntityType type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private int getLastRecordId(List<T> records) {
+        return records != null && records.size() != 0 ? records.get(records.size() - 1).getId() + 1 : 1;
     }
     
-    @Override
-    public Result updateRecord(Object bean, EntityType type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Result getRecordById(int id, EntityType type){
+    private Result saveUserRecords(List<User> list) {
+        XmlUserList userList = new XmlUserList();
+        userList.setBeans(list);
         try {
             File source = new File("src/main/resources/xml_beans/users.xml");
-            XmlBeanList userList = serializer.read(XmlBeanList.class, source);
-            User user = userList.getList().stream().filter(t -> Objects.equals(t.getId(), id)).findFirst().orElse(null);
-            log.info(user);
+            serializer.write(userList, source);
+            return new Result(ResultType.SUCCESS.ordinal());
         } catch (Exception ex) {
-            log.info(ex.getMessage());
-        }        
+            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return new Result(ResultType.FAILURE.ordinal());
+    }
+    
+    private Result savePostRecords(List<Post> list) {
+        XmlPostList postList = new XmlPostList();
+        postList.setBeans(list);
+        try {
+            File source = new File("src/main/resources/xml_beans/posts.xml");
+            serializer.write(postList, source);
+            return new Result(ResultType.SUCCESS.ordinal());
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return new Result(ResultType.FAILURE.ordinal());
+    }
+        
+    private Result saveCommentRecords(List<Comment> list) {
+        XmlCommentList commentList = new XmlCommentList();
+        commentList.setBeans(list);
+        try {
+            File source = new File("src/main/resources/xml_beans/comments.xml");
+            serializer.write(commentList, source);
+            return new Result(ResultType.SUCCESS.ordinal());
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         return new Result(ResultType.FAILURE.ordinal());
     }
     
     @Override
-    public List<T> getAllRecords(EntityType type) {
+    public Result saveRecord(T bean, EntityType type) {
+        Result result = null;
         List<T> records = null;
+        switch(type) {
+            case USER:
+                records = (List<T>) getAllUserRecords();
+                bean.setId(getLastRecordId(records));
+                records.add(bean);
+                result = saveUserRecords((List<User>) records);
+                break;
+            case POST:
+                records = (List<T>) getAllPostRecords();
+                bean.setId(getLastRecordId(records));
+                records.add(bean);
+                result = savePostRecords((List<Post>) records);
+                break;
+            case COMMENT:
+                records = (List<T>) getAllCommentRecords();
+                bean.setId(getLastRecordId(records));
+                records.add(bean);
+                result = saveCommentRecords((List<Comment>) records);
+                break;
+        }
+        if (result.getStatus() == ResultType.SUCCESS.ordinal()) 
+            result.setBean(bean);
+        
+        return result;
+    }
+
+    private Result dependencyDestroy(int id, EntityType type) {
+        List<T> postRecords = null;
+        List<T> commentRecords = null;
+        Result result;
+        switch (type){
+            case USER:
+                postRecords = (List<T>) getAllPostRecords().stream().filter(t -> {
+                    if (t.getUserId() == id)
+                        dependencyDestroy(t.getId(), EntityType.POST);
+                    return t.getUserId() != id;
+                }).collect(Collectors.toList());
+                result = savePostRecords((List<Post>) postRecords);
+                
+                commentRecords = (List<T>) getAllCommentRecords().stream().filter(t -> t.getUserId() != id).collect(Collectors.toList());
+                result = saveCommentRecords((List<Comment>) commentRecords);
+                
+                return result;
+            case POST:
+                commentRecords = (List<T>) getAllCommentRecords().stream().filter(t -> t.getPostId() != id).collect(Collectors.toList());
+                result = saveCommentRecords((List<Comment>) commentRecords);
+                return result;
+            case COMMENT:
+                return new Result(ResultType.SUCCESS.ordinal());
+        }
+        
+        return new Result(ResultType.FAILURE.ordinal());
+    }
+    
+    @Override
+    public Result deleteRecord(int id, EntityType type) {
+        List<T> records = null;
+        Result result = getRecordById(id, type);
+        
+        if (result.getStatus() != ResultType.SUCCESS.ordinal())
+            return result;
+        
+        records = (List<T>) getAllRecords(type).stream().filter(r -> id != r.getId()).collect(Collectors.toList());
+
+        switch (type){
+            case USER:
+                dependencyDestroy(id, EntityType.USER);
+                return saveUserRecords((List<User>) records);
+            case POST:
+                dependencyDestroy(id, EntityType.POST);
+                return savePostRecords((List<Post>) records);
+            case COMMENT:
+                return saveCommentRecords((List<Comment>) records);
+        }
+        
+        return null;
+    }
+    
+    private Result updateUserRecord(T bean) {
+        List<T> records = null;
+        records = (List<T>) getAllUserRecords();
+        records.stream().forEach(item -> {
+            if (item.getId() == bean.getId()) {
+                User t = (User) item;
+                t.updateWith((User) bean);
+                item = (T) t;
+            }
+        });
+        Result result = saveUserRecords((List<User>) records);
+        if (result.getStatus() == ResultType.SUCCESS.ordinal())
+            result.setBean(bean);
+
+        return result;
+    }
+    
+    private Result updatePostRecord(T bean) {
+        List<T> records = null;
+        records = (List<T>) getAllPostRecords();
+        records.stream().forEach(item -> {
+            if (item.getId() == bean.getId()) {
+                Post t = (Post) item;
+                t.updateWith((Post) bean);
+                item = (T) t;
+            }
+        });
+        Result result = savePostRecords((List<Post>) records);
+        if (result.getStatus() == ResultType.SUCCESS.ordinal())
+            result.setBean(bean);
+
+        return result;
+    }
+        
+    private Result updateCommentRecord(T bean) {
+        List<T> records = null;
+        records = (List<T>) getAllCommentRecords();
+        records.stream().forEach(item -> {
+            if (item.getId() == bean.getId()) {
+                Comment t = (Comment) item;
+                t.updateWith((Comment) bean);
+                item = (T) t;
+            }
+        });
+        Result result = saveCommentRecords((List<Comment>) records);
+        if (result.getStatus() == ResultType.SUCCESS.ordinal())
+            result.setBean(bean);
+
+        return result;
+    }
+    
+    @Override
+    public Result updateRecord(T bean, EntityType type) {
+        switch (type){
+            case USER:
+                return updateUserRecord(bean);
+            case POST:
+                return updatePostRecord(bean);
+            case COMMENT:
+                return updateCommentRecord(bean);
+        }
+        
+        return new Result(ResultType.FAILURE.ordinal());
+    }
+    
+    private Result getUserRecordById(int id) {
+        User user = null;
+        user = getAllUserRecords().stream().filter(t -> Objects.equals(t.getId(), id)).findFirst().orElse(null);
+        return user != null ? new Result(ResultType.SUCCESS.ordinal(), user) : new Result(ResultType.NOT_FOUND.ordinal());
+    }
+    
+    private Result getPostRecordById(int id) {
+        Post post = null;
+        post = getAllPostRecords().stream().filter(t -> Objects.equals(t.getId(), id)).findFirst().orElse(null);
+        return post != null ? new Result(ResultType.SUCCESS.ordinal(), post) : new Result(ResultType.NOT_FOUND.ordinal());
+    }
+        
+    private Result getCommentRecordById(int id) {
+        Comment comment = null;
+        comment = getAllCommentRecords().stream().filter(t -> Objects.equals(t.getId(), id)).findFirst().orElse(null);
+        return comment != null ? new Result(ResultType.SUCCESS.ordinal(), comment) : new Result(ResultType.NOT_FOUND.ordinal());
+    }
+
+    @Override
+    public Result getRecordById(int id, EntityType type){
+        Result result = null;
+        switch (type){
+            case USER:
+                return getUserRecordById(id);
+            case POST:
+                return getPostRecordById(id);
+            case COMMENT:
+                return getCommentRecordById(id);
+        }
+        return new Result(ResultType.FAILURE.ordinal());
+    }
+    
+    private List<User> getAllUserRecords() {
+        XmlUserList userList = new XmlUserList();
+        List<User> records = new LinkedList<User>();
+        try {
+            File source = new File("src/main/resources/xml_beans/users.xml");
+            userList = serializer.read(XmlUserList.class, source);
+            if (userList.getBeans() != null)
+                records = userList.getBeans();
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return records;
+    }
+ 
+    private List<Post> getAllPostRecords() {
+        XmlPostList postList = new XmlPostList();
+        List<Post> records = new LinkedList<Post>();
+        try {
+            File source = new File("src/main/resources/xml_beans/posts.xml");
+            postList = serializer.read(XmlPostList.class, source);
+            if (postList.getBeans() != null)
+                records = postList.getBeans();
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return records;
     }
     
-    protected void initFile(EntityType type) throws IllegalArgumentException{
-            switch (type) {
-                case USER:
-                    file = new File("users.xml");
-                    break;
-//                case POST:
-//                    file = new File(users_path);
-//                    break;
-//                case COMMENT:
-//                    file = new File(projects_path);
-//                    break;
-                default:
-                    log.info("Wrong entity type");
-                    throw new IllegalArgumentException("Wrong entity type");
-            }
+    private List<Comment> getAllCommentRecords() {
+        XmlCommentList commentList = new XmlCommentList();
+        List<Comment> records = new LinkedList<Comment>();
+        try {
+            File source = new File("src/main/resources/xml_beans/comments.xml");
+            commentList = serializer.read(XmlCommentList.class, source);
+            if (commentList.getBeans() != null)
+                records = commentList.getBeans();
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return records;
+    }
+    
+    @Override
+    public List<T> getAllRecords(EntityType type) {
+        switch (type){
+            case USER:
+                return (List<T>) getAllUserRecords();
+            case POST:
+                return (List<T>) getAllPostRecords();
+            case COMMENT:
+                return (List<T>) getAllCommentRecords();
+        }
+        return null;
     }
 }

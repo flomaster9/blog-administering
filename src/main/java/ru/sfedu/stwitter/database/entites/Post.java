@@ -7,18 +7,24 @@ package ru.sfedu.stwitter.database.entites;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
 import com.opencsv.bean.CsvCustomBindByPosition;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 /**
  *
  * @author daniel
  */
+@Root(name="post")
 public class Post implements WithId {
     @CsvBindByPosition(position = 0)
     private int id;
     @CsvBindByPosition(position = 1)
     private int userId;
+    @Element(name = "title")
     @CsvBindByPosition(position = 2)
     private String title;
+    @Element(name = "content")
     @CsvBindByPosition(position = 3)
     private String content;
     
@@ -32,19 +38,23 @@ public class Post implements WithId {
     
     
     @Override
+    @Attribute(name="Id")
     public int getId() {
         return this.id;
     }
     
     @Override
+    @Attribute(name="Id")
     public void setId(int id) {
         this.id = id;
     }
     
+    @Attribute(name="UserId")
     public int getUserId() {
         return this.userId;
     }
     
+    @Attribute(name="UserId")
     public void setUserId(int userId) {
         this.userId = userId;
     }

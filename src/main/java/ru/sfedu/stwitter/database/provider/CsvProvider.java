@@ -244,6 +244,42 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         
         return result;
     }
+    
+    
+    private Result dependencyDestroy(int id, EntityType type) {
+        List<T> postRecords = null;
+        List<T> commentRecords = null;
+        Result result;
+        switch (type){
+            case USER:
+                postRecords = getAllPostRecords().stream().filter(t -> {
+                    Post post = (Post) t;
+                    if (post.getUserId() == id)
+                        dependencyDestroy(post.getId(), EntityType.POST);
+                    return post.getUserId() != id;
+                }).collect(Collectors.toList());
+                result = savePostRecords(postRecords);
+                
+                commentRecords = getAllCommentRecords().stream().filter(t -> {
+                    Comment comment = (Comment) t;
+                    return comment.getUserId() != id;
+                }).collect(Collectors.toList());
+                result = saveCommentRecords(commentRecords);
+                
+                return result;
+            case POST:
+                commentRecords = getAllCommentRecords().stream().filter(t -> {
+                    Comment comment = (Comment) t;
+                    return comment.getPostId() != id;
+                }).collect(Collectors.toList());
+                result = saveCommentRecords(commentRecords);
+                return result;
+            case COMMENT:
+                return new Result(ResultType.SUCCESS.ordinal());
+        }
+        
+        return new Result(ResultType.FAILURE.ordinal());
+    }
 
     @Override
     public Result deleteRecord(int id, EntityType type) {
@@ -254,8 +290,10 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         
         switch(type) {
             case USER:
+                dependencyDestroy(id, EntityType.USER);
                 return deleteUserRecord(id);
             case POST:
+                dependencyDestroy(id, EntityType.POST);
                 return deletePostRecord(id);
             case COMMENT:
                 return deleteCommentRecord(id);

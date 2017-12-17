@@ -1,12 +1,7 @@
 <beans>
-    <user>
-        <id>1</id>
-        <login>testLogin</login>
-        <name>testname</name>
-    </user>
-    <user>
-        <id>2</id>
-        <login>testLogin</login>
-        <name>testname</name>
-    </user>
+   <user Name="GuestName" Id="5" Login="GuestLogin"/>
+   <user Name="GuestName" Id="6" Login="GuestLogin"/>
+   <user Name="GuestName" Id="7" Login="GuestLogin"/>
+   <user Name="GuestName" Id="8" Login="GuestLogin"/>
+   <user Name="GuestName" Id="9" Login="GuestLogin"/>
 </beans>

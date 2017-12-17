@@ -17,8 +17,7 @@ import java.util.List;
  * @author daniel
  */
 public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
-    
-    private static PsqlProvider instance;
+
     private static Logger log = Logger.getLogger(PsqlProvider.class);
     
     private Connection conn;
@@ -132,7 +131,7 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
                 query = "UPDATE posts set (user_id, title, content) = (" + bean.toString() + ") where id = " + bean.getId() + ";";
                 break;
             case COMMENT:
-                query = "UPDATE comment set (post_id, user_id, content) = (" + bean.toString() + ") where id = " + bean.getId() + ";";
+                query = "UPDATE comments set (post_id, user_id, content) = (" + bean.toString() + ") where id = " + bean.getId() + ";";
                 break;
         }
         
@@ -152,15 +151,17 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
         User user = new User();
         try {
             resultSet = statement.executeQuery(query);
-            resultSet.next();
-            user.setId(resultSet.getInt("id"));
-            user.setLogin(resultSet.getString("login"));
-            user.setName(resultSet.getString("name"));
+            if (resultSet.next()) {
+                user.setId(resultSet.getInt("id"));
+                user.setLogin(resultSet.getString("login"));
+                user.setName(resultSet.getString("name"));
+            } else
+                user = null;
         } catch (SQLException e){
             log.error(e);
             return new Result(ResultType.SQL_EXCEPTION.ordinal());
         }
-        return new Result(ResultType.SUCCESS.ordinal(), user);
+        return user != null ? new Result(ResultType.SUCCESS.ordinal(), user) : new Result(ResultType.NOT_FOUND.ordinal());
     }
     
     private Result getPostRecordById(int id){
@@ -169,16 +170,18 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
         Post post = new Post();
         try {
             resultSet = statement.executeQuery(query);
-            resultSet.next();
-            post.setId(resultSet.getInt("id"));
-            post.setUserId(resultSet.getInt("user_id"));
-            post.setTitle(resultSet.getString("title"));
-            post.setContent(resultSet.getString("content"));
+            if (resultSet.next()) {
+                post.setId(resultSet.getInt("id"));
+                post.setUserId(resultSet.getInt("user_id"));
+                post.setTitle(resultSet.getString("title"));
+                post.setContent(resultSet.getString("content"));
+            } else
+                post = null;
         } catch (SQLException e){
             log.error(e);
             return new Result(ResultType.SQL_EXCEPTION.ordinal());
         }
-        return new Result(ResultType.SUCCESS.ordinal(), post);
+        return post != null ? new Result(ResultType.SUCCESS.ordinal(), post) : new Result(ResultType.NOT_FOUND.ordinal());
     }
     
     private Result getCommentRecordById(int id){
@@ -187,16 +190,18 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
         Comment comment = new Comment();
         try {
             resultSet = statement.executeQuery(query);
-            resultSet.next();
-            comment.setId(resultSet.getInt("id"));
-            comment.setPostId(resultSet.getInt("post_id"));
-            comment.setUserId(resultSet.getInt("user_id"));
-            comment.setContent(resultSet.getString("content"));
+            if(resultSet.next()) {
+                comment.setId(resultSet.getInt("id"));
+                comment.setPostId(resultSet.getInt("post_id"));
+                comment.setUserId(resultSet.getInt("user_id"));
+                comment.setContent(resultSet.getString("content"));
+            } else 
+                comment = null;
         } catch (SQLException e){
             log.error(e);
             return new Result(ResultType.SQL_EXCEPTION.ordinal());
         }
-        return new Result(ResultType.SUCCESS.ordinal(), comment);
+        return comment != null ? new Result(ResultType.SUCCESS.ordinal(), comment) : new Result(ResultType.NOT_FOUND.ordinal());
     }
 
     @Override
@@ -275,7 +280,7 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
     
     @Override
     public List<T> getAllRecords(EntityType type) {
-        records = new LinkedList<T>();
+        records = null;
 
         switch (type){
             case USER:

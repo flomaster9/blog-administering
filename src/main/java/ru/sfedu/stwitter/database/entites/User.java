@@ -18,13 +18,10 @@ import org.simpleframework.xml.Root;
 
 @Root(name="user")
 public class User implements WithId {
-    @Element(name = "id")
     @CsvBindByPosition(position = 0)
     private int id;
-    @Element(name = "login")
     @CsvBindByPosition(position = 1)
     private String login;
-    @Element(name = "name")
     @CsvBindByPosition(position = 2)
     private String name;
 
@@ -36,27 +33,33 @@ public class User implements WithId {
     }
 
     @Override
+    @Attribute(name="Id")
     public int getId() {
         return this.id;
     }
     
     @Override
+    @Attribute(name="Id")
     public void setId(int id) {
         this.id = id;
     }
     
+    @Attribute(name="Login")
     public String getLogin() {
         return this.login;
     }
     
+    @Attribute(name="Login")
     public void setLogin(String login) {
         this.login = login;
     }
     
+    @Attribute(name="Name")
     public String getName() {
         return this.name;
     }
     
+    @Attribute(name="Name")
     public void setName(String name) {
         this.name = name;
     }
