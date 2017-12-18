@@ -76,20 +76,48 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
         }
         return list.get(list.size() - 1);
     }
+    
+    private boolean isRecordExist(int id, EntityType type) {
+        Result result = null;
+        switch (type){
+            case USER:
+                result = getUserRecordById(id);
+                break;
+            case POST:
+                result = getPostRecordById(id);
+                break;
+            case COMMENT:
+                result = getCommentRecordById(id);
+                break;
+        }
+        return result.getStatus() == ResultType.SUCCESS.ordinal() ? true : false;
+    }
 
     @Override
     public Result saveRecord(T bean, EntityType type){
         String query = "";
+        int userId = 0;
+        int postId = 0;
         switch (type){
             case USER:
                 query = "INSERT INTO users(login, name)" +
                         " VALUES (" + bean.toString() + ");";
                 break;
             case POST:
+                userId = ((Post) bean).getUserId();
+                if (!isRecordExist(userId, EntityType.USER))
+                    return new Result(ResultType.USER_NOT_EXIST.ordinal());
                 query = "INSERT INTO posts(user_id, title, content)" +
                         " VALUES (" + bean.toString() + ");";
                 break;
             case COMMENT:
+                userId = ((Comment) bean).getUserId();
+                if (!isRecordExist(userId, EntityType.USER))
+                    return new Result(ResultType.USER_NOT_EXIST.ordinal());
+                
+                postId = ((Comment) bean).getPostId();
+                if (!isRecordExist(postId, EntityType.POST))
+                    return new Result(ResultType.POST_NOT_EXIST.ordinal());
                 query = "INSERT INTO comments(post_id, user_id, content)" +
                         " VALUES (" + bean.toString() + ");";
                 break;

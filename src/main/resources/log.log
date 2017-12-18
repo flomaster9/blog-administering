@@ -36,3 +36,5 @@
 12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:258 - Not found post with id 42
 12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment']comments in file
 12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:139 - Could not find comment with id 3
+12.18:16.50.45 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:109 - Post with id 97is missing
+12.18:16.52.07 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:109 - Post with id 141is missing

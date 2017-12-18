@@ -87,7 +87,7 @@ public class PsqlProviderTest {
             post = (Post) result.getBean();
             postId = post.getId();
             log.info("Post with id " + post.getId() + " was saved");
-        } else if(result.getStatus() == ResultType.SQL_EXCEPTION.ordinal()) {
+        } else if(result.getStatus() == ResultType.USER_NOT_EXIST.ordinal()) {
             log.info("User with id " + userId + " is missing");
         } else {
             fail("Test failure with " + result.getStatus());
@@ -103,8 +103,10 @@ public class PsqlProviderTest {
             comment = (Comment) result.getBean();
             commentId = comment.getId();
             log.info("Comment with id " + comment.getId() + " was saved");
-        } else if(result.getStatus() == ResultType.SQL_EXCEPTION.ordinal()) {
-            log.info("User with id " + userId + ", or post with id" + postId +" is missing");
+        } else if(result.getStatus() == ResultType.USER_NOT_EXIST.ordinal()) {
+            log.info("User with id " + userId + " is missing");
+        } else if(result.getStatus() == ResultType.POST_NOT_EXIST.ordinal()) {
+            log.info("Post with id " + postId + " is missing");
         } else {
             fail("Test failure with " + result.getStatus());
         }
