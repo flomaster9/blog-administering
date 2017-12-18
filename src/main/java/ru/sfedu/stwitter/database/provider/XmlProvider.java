@@ -73,10 +73,28 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
         return new Result(ResultType.FAILURE.ordinal());
     }
     
+    private boolean isRecordExist(int id, EntityType type) {
+        Result result = null;
+        switch (type){
+            case USER:
+                result = getUserRecordById(id);
+                break;
+            case POST:
+                result = getPostRecordById(id);
+                break;
+            case COMMENT:
+                result = getCommentRecordById(id);
+                break;
+        }
+        return result.getStatus() == ResultType.SUCCESS.ordinal() ? true : false;
+    }
+    
     @Override
     public Result saveRecord(T bean, EntityType type) {
         Result result = null;
         List<T> records = null;
+        int userId = 0;
+        int postId = 0;
         switch(type) {
             case USER:
                 records = (List<T>) getAllUserRecords();
@@ -85,16 +103,27 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
                 result = saveUserRecords((List<User>) records);
                 break;
             case POST:
+                userId = ((Post) bean).getUserId();
+                if (!isRecordExist(userId, EntityType.USER))
+                    return new Result(ResultType.USER_NOT_EXIST.ordinal());
+                
                 records = (List<T>) getAllPostRecords();
                 bean.setId(getLastRecordId(records));
                 records.add(bean);
                 result = savePostRecords((List<Post>) records);
                 break;
             case COMMENT:
+                userId = ((Comment) bean).getUserId();
+                if (!isRecordExist(userId, EntityType.USER))
+                    return new Result(ResultType.USER_NOT_EXIST.ordinal());
+                
+                postId = ((Comment) bean).getPostId();
+                if (!isRecordExist(postId, EntityType.POST))
+                    return new Result(ResultType.POST_NOT_EXIST.ordinal());
+                
                 records = (List<T>) getAllCommentRecords();
                 bean.setId(getLastRecordId(records));
                 records.add(bean);
-                log.info(records);
                 result = saveCommentRecords((List<Comment>) records);
                 break;
         }
@@ -292,7 +321,6 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
         }
-        log.info(records + "comments in file");
         return records;
     }
     

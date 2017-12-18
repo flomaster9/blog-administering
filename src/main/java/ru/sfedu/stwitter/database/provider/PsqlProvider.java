@@ -107,6 +107,7 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
                 userId = ((Post) bean).getUserId();
                 if (!isRecordExist(userId, EntityType.USER))
                     return new Result(ResultType.USER_NOT_EXIST.ordinal());
+                
                 query = "INSERT INTO posts(user_id, title, content)" +
                         " VALUES (" + bean.toString() + ");";
                 break;
@@ -118,6 +119,7 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
                 postId = ((Comment) bean).getPostId();
                 if (!isRecordExist(postId, EntityType.POST))
                     return new Result(ResultType.POST_NOT_EXIST.ordinal());
+                
                 query = "INSERT INTO comments(post_id, user_id, content)" +
                         " VALUES (" + bean.toString() + ");";
                 break;

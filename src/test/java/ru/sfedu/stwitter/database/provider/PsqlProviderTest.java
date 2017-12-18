@@ -28,8 +28,7 @@ public class PsqlProviderTest {
     private static int postId = 1;
     private static int commentId = 1;
         
-    public PsqlProviderTest() {
-    }
+    public PsqlProviderTest() {}
     
     @BeforeClass
     public static void setUpClass() {

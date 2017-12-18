@@ -215,10 +215,28 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
     private int getLastRecordId(List<T> records) {
         return records.size() != 0 ? records.get(records.size() - 1).getId() + 1 : 1;
     }
+
+    private boolean isRecordExist(int id, EntityType type) {
+        Result result = null;
+        switch (type){
+            case USER:
+                result = getUserRecordById(id);
+                break;
+            case POST:
+                result = getPostRecordById(id);
+                break;
+            case COMMENT:
+                result = getCommentRecordById(id);
+                break;
+        }
+        return result.getStatus() == ResultType.SUCCESS.ordinal() ? true : false;
+    }
     
     @Override
     public Result saveRecord(T bean, EntityType type) {
         Result result = null;
+        int userId = 0;
+        int postId = 0;
         switch(type) {
             case USER:
                 records = getAllUserRecords();
@@ -227,12 +245,24 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
                 result = saveUserRecords(records);
                 break;
             case POST:
+                userId = ((Post) bean).getUserId();
+                if (!isRecordExist(userId, EntityType.USER))
+                    return new Result(ResultType.USER_NOT_EXIST.ordinal());
+                
                 records = getAllPostRecords();
                 bean.setId(getLastRecordId(records));
                 records.add(bean);
                 result = savePostRecords(records);
                 break;
             case COMMENT:
+                userId = ((Comment) bean).getUserId();
+                if (!isRecordExist(userId, EntityType.USER))
+                    return new Result(ResultType.USER_NOT_EXIST.ordinal());
+                
+                postId = ((Comment) bean).getPostId();
+                if (!isRecordExist(postId, EntityType.POST))
+                    return new Result(ResultType.POST_NOT_EXIST.ordinal());
+                
                 records = getAllCommentRecords();
                 bean.setId(getLastRecordId(records));
                 records.add(bean);

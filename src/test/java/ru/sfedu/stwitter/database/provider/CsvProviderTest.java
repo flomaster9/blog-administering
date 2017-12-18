@@ -30,9 +30,9 @@ public class CsvProviderTest {
         result = instance.saveRecord(post, EntityType.POST);
         postId = result.getBean().getId();
         
-        Comment comment = new Comment(userId, postId, "New user's comment");
+        Comment comment = new Comment(postId, userId, "New user's comment");
         result = instance.saveRecord(comment, EntityType.COMMENT);
-        userId  = result.getBean().getId();
+        commentId = result.getBean().getId();
     }
     
     @AfterClass
@@ -73,6 +73,8 @@ public class CsvProviderTest {
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
             postId = post.getId();
             log.info("Post with id " + post.getId() + " was saved");
+        } else if(result.getStatus() == ResultType.USER_NOT_EXIST.ordinal()) {
+            log.info("User with id " + userId + " is missing");
         } else {
             fail("Test failure with " + result.getStatus());
         }  
@@ -86,6 +88,10 @@ public class CsvProviderTest {
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
             commentId = comment.getId();
             log.info("Comment with id " + comment.getId() + " was saved");
+        } else if(result.getStatus() == ResultType.USER_NOT_EXIST.ordinal()) {
+            log.info("User with id " + userId + " is missing");
+        } else if(result.getStatus() == ResultType.POST_NOT_EXIST.ordinal()) {
+            log.info("Post with id " + postId + " is missing");
         } else {
             fail("Test failure with " + result.getStatus());
         }

@@ -5,4 +5,12 @@
    <user Name="GuestName" Id="4" Login="GuestLogin"/>
    <user Name="GuestName" Id="5" Login="GuestLogin"/>
    <user Name="GuestName" Id="6" Login="GuestLogin"/>
+   <user Name="GuestName" Id="7" Login="GuestLogin"/>
+   <user Name="GuestName" Id="8" Login="GuestLogin"/>
+   <user Name="GuestName" Id="9" Login="GuestLogin"/>
+   <user Name="GuestName" Id="10" Login="GuestLogin"/>
+   <user Name="GuestName" Id="11" Login="GuestLogin"/>
+   <user Name="GuestName" Id="12" Login="GuestLogin"/>
+   <user Name="GuestName" Id="13" Login="GuestLogin"/>
+   <user Name="GuestName" Id="14" Login="GuestLogin"/>
 </beans>
