@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ru.sfedu.stwitter.database.provider;
 import java.io.File;
 import java.io.FileReader;
@@ -17,6 +12,7 @@ import org.apache.log4j.Logger;
 import ru.sfedu.stwitter.database.entites.*;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
+import ru.sfedu.stwitter.Constants;
 import ru.sfedu.stwitter.utils.ConfigurationUtil;
 
 /**
@@ -39,7 +35,7 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
         XmlUserList userList = new XmlUserList();
         userList.setBeans(list);
         try {
-            File source = new File("src/main/resources/xml_beans/users.xml");
+            File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_USERS));
             serializer.write(userList, source);
             return new Result(ResultType.SUCCESS.ordinal());
         } catch (Exception ex) {
@@ -53,7 +49,7 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
         XmlPostList postList = new XmlPostList();
         postList.setBeans(list);
         try {
-            File source = new File("src/main/resources/xml_beans/posts.xml");
+            File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_POSTS));
             serializer.write(postList, source);
             return new Result(ResultType.SUCCESS.ordinal());
         } catch (Exception ex) {
@@ -67,7 +63,7 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
         XmlCommentList commentList = new XmlCommentList();
         commentList.setBeans(list);
         try {
-            File source = new File("src/main/resources/xml_beans/comments.xml");
+            File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_COMMENTS));
             serializer.write(commentList, source);
             return new Result(ResultType.SUCCESS.ordinal());
         } catch (Exception ex) {
@@ -98,6 +94,7 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
                 records = (List<T>) getAllCommentRecords();
                 bean.setId(getLastRecordId(records));
                 records.add(bean);
+                log.info(records);
                 result = saveCommentRecords((List<Comment>) records);
                 break;
         }
@@ -260,7 +257,7 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
         XmlUserList userList = new XmlUserList();
         List<User> records = new LinkedList<User>();
         try {
-            File source = new File("src/main/resources/xml_beans/users.xml");
+            File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_USERS));
             userList = serializer.read(XmlUserList.class, source);
             if (userList.getBeans() != null)
                 records = userList.getBeans();
@@ -274,7 +271,7 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
         XmlPostList postList = new XmlPostList();
         List<Post> records = new LinkedList<Post>();
         try {
-            File source = new File("src/main/resources/xml_beans/posts.xml");
+            File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_POSTS));
             postList = serializer.read(XmlPostList.class, source);
             if (postList.getBeans() != null)
                 records = postList.getBeans();
@@ -288,13 +285,14 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
         XmlCommentList commentList = new XmlCommentList();
         List<Comment> records = new LinkedList<Comment>();
         try {
-            File source = new File("src/main/resources/xml_beans/comments.xml");
+            File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_COMMENTS));
             commentList = serializer.read(XmlCommentList.class, source);
             if (commentList.getBeans() != null)
                 records = commentList.getBeans();
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
         }
+        log.info(records + "comments in file");
         return records;
     }
     

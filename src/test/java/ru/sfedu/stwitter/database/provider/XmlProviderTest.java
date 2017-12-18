@@ -44,7 +44,8 @@ public class XmlProviderTest {
         
         Comment comment = new Comment(userId, postId, "New user comment");
         result = instance.saveRecord(comment, EntityType.COMMENT);
-        userId  = result.getBean().getId();
+        commentId  = result.getBean().getId();
+        log.info(commentId);
     }
     
     @AfterClass
@@ -69,6 +70,7 @@ public class XmlProviderTest {
         Result result = instance.saveRecord(user, EntityType.USER);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
+            user = (User) result.getBean();
             userId = user.getId();
             log.info("User with id " + user.getId() + " was saved");
         } else {
@@ -82,6 +84,7 @@ public class XmlProviderTest {
         Result result = instance.saveRecord(post, EntityType.POST);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
+            post = (Post) result.getBean();
             postId = post.getId();
             log.info("Post with id " + post.getId() + " was saved");
         } else {
@@ -95,6 +98,7 @@ public class XmlProviderTest {
         Result result = instance.saveRecord(comment, EntityType.COMMENT);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
+            comment = (Comment) result.getBean();
             commentId = comment.getId();
             log.info("Comment with id " + comment.getId() + " was saved");
         } else {
@@ -268,10 +272,13 @@ public class XmlProviderTest {
     public void testDeleteCommentById() {
         Result result = instance.getRecordById(commentId, EntityType.COMMENT);
         
-        if (result.getStatus() == ResultType.SUCCESS.ordinal())
+        if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
             result = instance.deleteRecord(commentId, EntityType.COMMENT);
+            log.info(result.getBean());
+        }
         else {
             log.info("Not found comment with id " + commentId);
+            log.info(commentId);
             return;
         }
         

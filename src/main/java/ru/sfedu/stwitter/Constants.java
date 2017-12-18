@@ -13,5 +13,9 @@ public class Constants {
     public static final String CSV_PATH_USERS="db.csv_path_users";
     public static final String CSV_PATH_POSTS="db.csv_path_posts";
     public static final String CSV_PATH_COMMENTS="db.csv_path_comments";
+    
+    public static final String XML_PATH_USERS="db.xml_path_users";
+    public static final String XML_PATH_POSTS="db.xml_path_posts";
+    public static final String XML_PATH_COMMENTS="db.xml_path_comments";
     public static final int PORT = 8080;
 }

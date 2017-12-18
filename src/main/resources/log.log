@@ -1,24 +1,38 @@
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:99 - Comment with id 13 was saved
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:123 - Find post with id 10
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:73 - User with id 11 was saved
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:86 - Post with id 11 was saved
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:161 - User with id 11 was updated
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:190 - Post with id 11 was updated
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:279 - Comment with id 13 was deleted
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:239 - User with id 11 was deleted
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:115 - Could not find user with id 11
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:203 - Not found comment with id 13
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:254 - Not found post with id 11
-12.17:21.46.29 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:135 - Could not find comment with id 13
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:88 - Comment with id 24 was saved
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:112 - Find post with id 20
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:62 - User with id 20 was saved
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:75 - Post with id 21 was saved
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:150 - User with id 20 was updated
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:179 - Post with id 21 was updated
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:268 - Comment with id 24 was deleted
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:228 - User with id 20 was deleted
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:104 - Could not find user with id 20
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:192 - Not found comment with id 24
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:243 - Not found post with id 21
-12.17:21.46.35 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:124 - Could not find comment with id 24
+12.18:13.12.03 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - []comments in file
+12.18:13.12.03 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:97 - ['4', '39', 'New user comment']
+12.18:13.12.03 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:48 - 1
+12.18:13.12.03 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - []comments in file
+12.18:13.12.03 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:97 - ['6', '6', 'New user comment']
+12.18:13.12.03 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:103 - Comment with id 1 was saved
+12.18:13.12.15 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - []comments in file
+12.18:13.12.15 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:97 - ['5', '40', 'New user comment']
+12.18:13.12.15 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:48 - 1
+12.18:13.12.15 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - []comments in file
+12.18:13.12.15 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:97 - ['6', '6', 'New user comment']
+12.18:13.12.15 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:103 - Comment with id 1 was saved
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:97 - ['6', '6', 'New user comment', '6', '41', 'New user comment']
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:48 - 2
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:97 - ['6', '6', 'New user comment', '6', '41', 'New user comment', '6', '6', 'New user comment']
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:103 - Comment with id 3 was saved
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:127 - Find post with id 41
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:75 - User with id 7 was saved
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:89 - Post with id 42 was saved
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:165 - User with id 7 was updated
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:194 - Post with id 42 was updated
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment', '6', '6', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment', '6', '6', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment', '6', '6', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:277 - 
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:286 - Comment with id 3 was deleted
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:243 - User with id 7 was deleted
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:119 - Could not find user with id 7
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:207 - Not found comment with id 3
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:258 - Not found post with id 42
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.XmlProvider:295 - ['6', '6', 'New user comment', '6', '41', 'New user comment']comments in file
+12.18:13.13.55 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:139 - Could not find comment with id 3

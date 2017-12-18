@@ -1,20 +1,8 @@
 <beans>
-   <comment Id="7" PostId="5" UserId="5">
+   <comment Id="1" PostId="6" UserId="6">
       <content>New user comment</content>
    </comment>
-   <comment Id="8" PostId="6" UserId="6">
-      <content>New user comment</content>
-   </comment>
-   <comment Id="9" PostId="7" UserId="7">
-      <content>New user comment</content>
-   </comment>
-   <comment Id="10" PostId="8" UserId="8">
-      <content>New user comment</content>
-   </comment>
-   <comment Id="11" PostId="9" UserId="9">
-      <content>New user comment</content>
-   </comment>
-   <comment Id="12" PostId="10" UserId="10">
+   <comment Id="2" PostId="6" UserId="41">
       <content>New user comment</content>
    </comment>
 </beans>
