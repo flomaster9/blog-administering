@@ -27,18 +27,6 @@
       <title>New post title</title>
       <content>New post content</content>
    </post>
-   <post Id="16" UserId="16">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="17" UserId="17">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="18" UserId="18">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
    <post Id="19" UserId="19">
       <title>New post title</title>
       <content>New post content</content>
@@ -160,6 +148,18 @@
       <content>New post content</content>
    </post>
    <post Id="49" UserId="14">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
+   <post Id="50" UserId="15">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
+   <post Id="51" UserId="16">
+      <title>New post title</title>
+      <content>New post content</content>
+   </post>
+   <post Id="52" UserId="17">
       <title>New post title</title>
       <content>New post content</content>
    </post>

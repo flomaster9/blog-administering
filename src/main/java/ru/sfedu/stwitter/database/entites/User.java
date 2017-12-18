@@ -58,7 +58,7 @@ public class User implements WithId {
     public String getName() {
         return this.name;
     }
-    
+
     @Attribute(name="Name")
     public void setName(String name) {
         this.name = name;
@@ -70,8 +70,13 @@ public class User implements WithId {
     }
     
     @Override
-    public String toString() {
+    public String toInsert() {
         return "'" + login + "', '" + name + "'";
+    }
+    
+    @Override
+    public String toString() {
+        return "id: " + id + ", login: " + login + ", name: " + name;
     }
 }
        

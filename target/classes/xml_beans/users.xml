@@ -13,4 +13,7 @@
    <user Name="GuestName" Id="12" Login="GuestLogin"/>
    <user Name="GuestName" Id="13" Login="GuestLogin"/>
    <user Name="GuestName" Id="14" Login="GuestLogin"/>
+   <user Name="GuestName" Id="15" Login="GuestLogin"/>
+   <user Name="GuestName" Id="16" Login="GuestLogin"/>
+   <user Name="GuestName" Id="17" Login="GuestLogin"/>
 </beans>

@@ -101,7 +101,7 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
         switch (type){
             case USER:
                 query = "INSERT INTO users(login, name)" +
-                        " VALUES (" + bean.toString() + ");";
+                        " VALUES (" + bean.toInsert() + ");";
                 break;
             case POST:
                 userId = ((Post) bean).getUserId();
@@ -109,7 +109,7 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
                     return new Result(ResultType.USER_NOT_EXIST.ordinal());
                 
                 query = "INSERT INTO posts(user_id, title, content)" +
-                        " VALUES (" + bean.toString() + ");";
+                        " VALUES (" + bean.toInsert() + ");";
                 break;
             case COMMENT:
                 userId = ((Comment) bean).getUserId();
@@ -121,7 +121,7 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
                     return new Result(ResultType.POST_NOT_EXIST.ordinal());
                 
                 query = "INSERT INTO comments(post_id, user_id, content)" +
-                        " VALUES (" + bean.toString() + ");";
+                        " VALUES (" + bean.toInsert() + ");";
                 break;
         }
         try {
@@ -211,13 +211,13 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
         
         switch (type){
             case USER:
-                query = "UPDATE users set (login, name) = (" + bean.toString() + ") where id = " + bean.getId() + ";";
+                query = "UPDATE users set (login, name) = (" + bean.toInsert() + ") where id = " + bean.getId() + ";";
                 break;
             case POST:
-                query = "UPDATE posts set (user_id, title, content) = (" + bean.toString() + ") where id = " + bean.getId() + ";";
+                query = "UPDATE posts set (user_id, title, content) = (" + bean.toInsert() + ") where id = " + bean.getId() + ";";
                 break;
             case COMMENT:
-                query = "UPDATE comments set (post_id, user_id, content) = (" + bean.toString() + ") where id = " + bean.getId() + ";";
+                query = "UPDATE comments set (post_id, user_id, content) = (" + bean.toInsert() + ") where id = " + bean.getId() + ";";
                 break;
         }
         

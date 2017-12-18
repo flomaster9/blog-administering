@@ -81,7 +81,12 @@ public class Post implements WithId {
     }
     
     @Override
-    public String toString() {
+    public String toInsert() {
         return "'" + userId + "', '" + title + "', '" + content + "'";
+    }
+    
+    @Override
+    public String toString() {
+        return "id: " + id + ", userId: " + userId + ", title: " + title + ", content: " + content;
     }
 }

@@ -12,4 +12,5 @@ package ru.sfedu.stwitter.database.entites;
 public interface WithId {
     public int getId();
     public void setId(int id);
+    public String toInsert();
  }

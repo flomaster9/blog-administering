@@ -77,7 +77,12 @@ public class Comment implements WithId {
     }
     
     @Override
-    public String toString() {
+    public String toInsert() {
         return "'" + postId + "', '" + userId  + "', '" + content + "'";
+    }
+    
+    @Override
+    public String toString() {
+        return "id: " + id + ", postId: " + postId + ", userId: " + userId + ", content: " + content;
     }
 }
