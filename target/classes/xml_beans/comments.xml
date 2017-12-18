@@ -1,6 +1,6 @@
 <beans>
    <comment Id="1" UserId="6" PostId="6">
-      <content>New user comment</content>
+      <content>there is updated content</content>
    </comment>
    <comment Id="2" UserId="41" PostId="6">
       <content>New user comment</content>
@@ -37,5 +37,11 @@
    </comment>
    <comment Id="13" UserId="17" PostId="52">
       <content>New user comment</content>
+   </comment>
+   <comment Id="14" UserId="17" PostId="42">
+      <content>comment_from_cmd</content>
+   </comment>
+   <comment Id="15" UserId="16" PostId="30">
+      <content>new comment from CLI</content>
    </comment>
 </beans>

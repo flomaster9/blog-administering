@@ -99,10 +99,6 @@
       <title>New post title</title>
       <content>New post content</content>
    </post>
-   <post Id="37" UserId="1">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
    <post Id="38" UserId="3">
       <title>New post title</title>
       <content>New post content</content>

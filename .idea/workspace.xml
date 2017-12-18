@@ -2,38 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d226da8-0ee5-421d-8206-4ce44813a4f6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/Comment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/Post.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/Post.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/User.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/WithId.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/WithId.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/PsqlProvider.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/PsqlProvider.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log.log" afterPath="$PROJECT_DIR$/src/main/resources/log.log" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/csv_beans/posts.csv" afterPath="$PROJECT_DIR$/src/main/resources/csv_beans/posts.csv" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/csv_beans/users.csv" afterPath="$PROJECT_DIR$/src/main/resources/csv_beans/users.csv" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/xml_beans/comments.xml" afterPath="$PROJECT_DIR$/src/main/resources/xml_beans/comments.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/xml_beans/posts.xml" afterPath="$PROJECT_DIR$/src/main/resources/xml_beans/posts.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/xml_beans/users.xml" afterPath="$PROJECT_DIR$/src/main/resources/xml_beans/users.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log.log" afterPath="$PROJECT_DIR$/target/classes/log.log" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterServer.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterServer.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/controllers/UserController$Drop.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/controllers/UserController$Drop.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Comment.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Comment.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Post.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Post.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/User.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/User.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/WithId.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/WithId.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/IDataProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/IDataProvider.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/utils/ConfigurationUtil.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/utils/ConfigurationUtil.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/csv_beans/posts.csv" afterPath="$PROJECT_DIR$/target/classes/csv_beans/posts.csv" />
+      <change beforePath="$PROJECT_DIR$/target/classes/csv_beans/users.csv" afterPath="$PROJECT_DIR$/target/classes/csv_beans/users.csv" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterClient.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterClient.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/xml_beans/comments.xml" afterPath="$PROJECT_DIR$/target/classes/xml_beans/comments.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/xml_beans/posts.xml" afterPath="$PROJECT_DIR$/target/classes/xml_beans/posts.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/xml_beans/users.xml" afterPath="$PROJECT_DIR$/target/classes/xml_beans/users.xml" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.sfedu.stwitter.database.provider.PsqlProviderTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.sfedu.stwitter.database.provider.PsqlProviderTest.xml" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.PsqlProviderTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.PsqlProviderTest.txt" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/CsvProviderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/CsvProviderTest.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/PsqlProviderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/PsqlProviderTest.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/XmlProviderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/XmlProviderTest.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,6 +24,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/simply_twitter$SimplyTwitterClient.coverage" NAME="SimplyTwitterClient Coverage Results" MODIFIED="1513623680651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ru.sfedu.stwitter.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="simply-twitter" />
   </component>
@@ -51,7 +37,7 @@
       <file leaf-file-name="CsvProviderTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/CsvProviderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="-942">
               <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
@@ -61,7 +47,7 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="218">
               <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding />
             </state>
@@ -71,8 +57,8 @@
       <file leaf-file-name="SimplyTwitterClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+            <state relative-caret-position="355">
+              <caret line="75" column="56" lean-forward="true" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -424,6 +410,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -434,16 +421,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28295043" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35308343" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.4940978" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.49345794" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5059022" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.506542" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -469,26 +457,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/CsvProviderTest.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="188">
+          <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="218">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/CsvProviderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-942">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+        <state relative-caret-position="355">
+          <caret line="75" column="56" lean-forward="true" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
