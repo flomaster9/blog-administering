@@ -12,6 +12,8 @@ import org.apache.log4j.Logger;
 import ru.sfedu.stwitter.database.entites.*;
 import java.util.List;
 import java.util.stream.Collectors;
+import ru.sfedu.stwitter.Constants;
+import ru.sfedu.stwitter.utils.ConfigurationUtil;
 
 /**
  *
@@ -41,6 +43,9 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
         password = "111";
        
         try {
+//            url = ConfigurationUtil.getConfigurationEntry(Constants.DB_URL);
+//            login = ConfigurationUtil.getConfigurationEntry(Constants.DB_LOGIN);
+//            password = ConfigurationUtil.getConfigurationEntry(Constants.DB_PASSWORD);
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(url, login, password);
             statement = conn.createStatement();

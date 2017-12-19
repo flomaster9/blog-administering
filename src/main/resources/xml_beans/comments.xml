@@ -1,47 +1,20 @@
 <beans>
-   <comment Id="1" UserId="6" PostId="6">
-      <content>there is updated content</content>
-   </comment>
-   <comment Id="2" UserId="41" PostId="6">
+   <comment Id="2" UserId="9" PostId="7">
       <content>New user comment</content>
    </comment>
-   <comment Id="3" UserId="8" PostId="43">
+   <comment Id="3" UserId="12" PostId="8">
       <content>New user comment</content>
    </comment>
-   <comment Id="4" UserId="9" PostId="44">
-      <content>Updated users comment</content>
-   </comment>
-   <comment Id="5" UserId="10" PostId="45">
+   <comment Id="4" UserId="13" PostId="9">
       <content>New user comment</content>
    </comment>
-   <comment Id="6" UserId="10" PostId="45">
+   <comment Id="5" UserId="14" PostId="10">
       <content>New user comment</content>
    </comment>
-   <comment Id="7" UserId="11" PostId="46">
+   <comment Id="6" UserId="15" PostId="11">
       <content>New user comment</content>
    </comment>
-   <comment Id="8" UserId="12" PostId="47">
+   <comment Id="7" UserId="16" PostId="12">
       <content>New user comment</content>
-   </comment>
-   <comment Id="9" UserId="13" PostId="48">
-      <content>New user comment</content>
-   </comment>
-   <comment Id="10" UserId="14" PostId="49">
-      <content>New user comment</content>
-   </comment>
-   <comment Id="11" UserId="15" PostId="50">
-      <content>New user comment</content>
-   </comment>
-   <comment Id="12" UserId="16" PostId="51">
-      <content>New user comment</content>
-   </comment>
-   <comment Id="13" UserId="17" PostId="52">
-      <content>New user comment</content>
-   </comment>
-   <comment Id="14" UserId="17" PostId="42">
-      <content>comment_from_cmd</content>
-   </comment>
-   <comment Id="15" UserId="16" PostId="30">
-      <content>new comment from CLI</content>
    </comment>
 </beans>

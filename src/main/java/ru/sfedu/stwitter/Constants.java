@@ -17,5 +17,10 @@ public class Constants {
     public static final String XML_PATH_USERS="db.xml_path_users";
     public static final String XML_PATH_POSTS="db.xml_path_posts";
     public static final String XML_PATH_COMMENTS="db.xml_path_comments";
+    
+    public static final String DB_URL="db.url";
+    public static final String DB_LOGIN="db.login";
+    public static final String DB_PASSWORD="db.password";
+    
     public static final int PORT = 8080;
 }

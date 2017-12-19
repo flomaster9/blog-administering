@@ -1,161 +1,29 @@
 <beans>
-   <post Id="4" UserId="4">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
    <post Id="5" UserId="5">
       <title>New post title</title>
       <content>New post content</content>
    </post>
-   <post Id="6" UserId="6">
+   <post Id="7" UserId="9">
       <title>New post title</title>
       <content>New post content</content>
    </post>
-   <post Id="8" UserId="8">
+   <post Id="8" UserId="12">
       <title>New post title</title>
       <content>New post content</content>
    </post>
-   <post Id="10" UserId="10">
+   <post Id="9" UserId="13">
       <title>New post title</title>
       <content>New post content</content>
    </post>
-   <post Id="11" UserId="11">
+   <post Id="10" UserId="14">
       <title>New post title</title>
       <content>New post content</content>
    </post>
-   <post Id="12" UserId="12">
+   <post Id="11" UserId="15">
       <title>New post title</title>
       <content>New post content</content>
    </post>
-   <post Id="19" UserId="19">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="20" UserId="20">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="21" UserId="21">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="22" UserId="22">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="23" UserId="23">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="24" UserId="24">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="25" UserId="25">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="26" UserId="26">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="27" UserId="27">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="28" UserId="28">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="29" UserId="29">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="30" UserId="30">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="31" UserId="31">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="32" UserId="32">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="33" UserId="33">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="34" UserId="34">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="35" UserId="35">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="36" UserId="36">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="38" UserId="3">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="39" UserId="4">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="40" UserId="5">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="41" UserId="6">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="42" UserId="7">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="43" UserId="8">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="44" UserId="9">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="45" UserId="10">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="46" UserId="11">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="47" UserId="12">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="48" UserId="13">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="49" UserId="14">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="50" UserId="15">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="51" UserId="16">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
-   <post Id="52" UserId="17">
+   <post Id="12" UserId="16">
       <title>New post title</title>
       <content>New post content</content>
    </post>

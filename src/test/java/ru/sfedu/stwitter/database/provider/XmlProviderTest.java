@@ -279,7 +279,7 @@ public class XmlProviderTest {
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
             result = instance.deleteRecord(commentId, EntityType.COMMENT);
-            log.info(result.getBean());
+            log.info("Post with id " + commentId + " was deleted");
         }
         else {
             log.info("Not found comment with id " + commentId);
