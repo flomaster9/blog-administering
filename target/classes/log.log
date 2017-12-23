@@ -1,0 +1,27 @@
+
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:24 - _____CLEAN_____
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:26 - _____SQL provider start_____
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 199 was deleted
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 200 was deleted
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 201 was deleted
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 202 was deleted
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 203 was deleted
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 204 was deleted
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 205 was deleted
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 206 was deleted
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 207 was deleted
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:29 - _____SQL provider end_____
+12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:31 - _____CSV provider start_____
+12.23:21.35.35 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 1 was deleted
+12.23:21.35.35 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 2 was deleted
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 3 was deleted
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 4 was deleted
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 5 was deleted
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 6 was deleted
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 7 was deleted
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 8 was deleted
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 9 was deleted
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:34 - _____CSV provider end_____
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:36 - _____XML provider start_____
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:39 - _____XML provider end_____
+12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:41 - -----CLEAN------
