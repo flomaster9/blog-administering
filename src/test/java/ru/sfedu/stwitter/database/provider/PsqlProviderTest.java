@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
 import ru.sfedu.stwitter.database.entites.EntityType;
 import ru.sfedu.stwitter.database.entites.Result;
 
@@ -15,6 +17,7 @@ import ru.sfedu.stwitter.database.entites.Result;
  *
  * @author daniel
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PsqlProviderTest {
     
     private static Logger log = Logger.getLogger(PsqlProvider.class);
@@ -59,7 +62,7 @@ public class PsqlProviderTest {
      */
 
     @Test
-    public void testSaveUserRecord() {
+    public void testASaveUserRecord() {
         User user = new User("GuestLogin", "GuestName");
         Result result = instance.saveRecord(user, EntityType.USER);
         
@@ -73,7 +76,7 @@ public class PsqlProviderTest {
     }
     
     @Test
-    public void testSavePostRecord() {
+    public void testBSavePostRecord() {
         Post post = new Post(userId, "New post title", "New post content");
         Result result = instance.saveRecord(post, EntityType.POST);
         
@@ -89,7 +92,7 @@ public class PsqlProviderTest {
     }
     
     @Test
-    public void testSaveCommentRecord() {
+    public void testCSaveCommentRecord() {
         Comment comment = new Comment(postId, userId, "New user comment");
         Result result = instance.saveRecord(comment, EntityType.COMMENT);
         
@@ -111,7 +114,7 @@ public class PsqlProviderTest {
      */
     
     @Test 
-    public void TestGetUserRecordById() {
+    public void TestDGetUserRecordById() {
         Result result = instance.getRecordById(userId, EntityType.USER);
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
             log.info("Find user with id " + result.getBean().getId());
@@ -121,7 +124,7 @@ public class PsqlProviderTest {
     }
     
     @Test 
-    public void TestGetPostRecordById() {
+    public void TestEGetPostRecordById() {
         Result result = instance.getRecordById(postId, EntityType.POST);
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
             log.info("Find post with id " + result.getBean().getId());
@@ -131,7 +134,7 @@ public class PsqlProviderTest {
     }
     
     @Test 
-    public void TestGetCommentRecordById() {
+    public void TestFGetCommentRecordById() {
         Result result = instance.getRecordById(commentId, EntityType.COMMENT);
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
             log.info("Find comment with id " + result.getBean().getId());
@@ -144,7 +147,7 @@ public class PsqlProviderTest {
      * Test of updateRecord methods, of class CsvProvider.
      */
     @Test
-    public void testUpdateUserRecord() {
+    public void testGUpdateUserRecord() {
         Result result = instance.getRecordById(userId, EntityType.USER);
         
         
@@ -171,7 +174,7 @@ public class PsqlProviderTest {
     }
     
     @Test
-    public void testUpdatePostRecord() {
+    public void testHUpdatePostRecord() {
         Result result = instance.getRecordById(postId, EntityType.POST);
         
         if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
@@ -200,7 +203,7 @@ public class PsqlProviderTest {
     }
     
     @Test
-    public void testUpdateCommentRecord() {
+    public void testIUpdateCommentRecord() {
         Result result = instance.getRecordById(commentId, EntityType.COMMENT);
 
         if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
@@ -229,7 +232,7 @@ public class PsqlProviderTest {
      */
     
     @Test 
-    public void testDeleteUserById() {
+    public void testLDeleteUserById() {
         Result result = instance.getRecordById(userId, EntityType.USER);
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal())
@@ -249,7 +252,7 @@ public class PsqlProviderTest {
     }
     
     @Test 
-    public void testDeletePostById() {
+    public void testKDeletePostById() {
         Result result = instance.getRecordById(postId, EntityType.POST);
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal())
@@ -269,7 +272,7 @@ public class PsqlProviderTest {
     }
     
     @Test 
-    public void testDeleteCommentById() {
+    public void testJDeleteCommentById() {
         Result result = instance.getRecordById(commentId, EntityType.COMMENT);
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal())

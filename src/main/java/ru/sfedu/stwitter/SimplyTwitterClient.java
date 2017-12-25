@@ -27,6 +27,7 @@ public class SimplyTwitterClient {
         }
 
         System.out.println("____Welcome to simply-twitter____");
+        System.out.println("____use command 'help' for guide____");
 
         while (true) {
             choose = scanner.nextLine();
@@ -105,8 +106,10 @@ public class SimplyTwitterClient {
     }
 
     private static boolean isIncorrectArgumentsLength(String[] params, int length) {
-        if (params.length != length)
+        if (params.length < length)
             System.out.println("ERROR: Not enough arguments, try again");
+        else if (params.length > length)
+            System.out.println("ERROR: Too many arguments, try again");
         return params.length != length;
     }
     

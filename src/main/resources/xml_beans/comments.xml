@@ -5,4 +5,7 @@
    <comment Id="2" UserId="2" PostId="2">
       <content>New user comment</content>
    </comment>
+   <comment Id="3" UserId="3" PostId="3">
+      <content>New user comment</content>
+   </comment>
 </beans>
