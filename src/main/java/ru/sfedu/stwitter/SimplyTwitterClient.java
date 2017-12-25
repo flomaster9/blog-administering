@@ -25,6 +25,9 @@ public class SimplyTwitterClient {
         if(path != null){ 
             ConfigurationUtil.setDefaultPath(System.getProperty("PATH")); 
         }
+
+        System.out.println("____Welcome to simply-twitter____");
+
         while (true) {
             choose = scanner.nextLine();
             
