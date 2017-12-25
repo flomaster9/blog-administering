@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="simply-twitter:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9d226da8-0ee5-421d-8206-4ce44813a4f6" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/simply_twitter_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/simply-twitter.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/Constants.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/PsqlProvider.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/PsqlProvider.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/utils/ConfigurationUtil.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/utils/ConfigurationUtil.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/csv_beans/comments.csv" afterPath="$PROJECT_DIR$/src/main/resources/csv_beans/comments.csv" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/csv_beans/posts.csv" afterPath="$PROJECT_DIR$/src/main/resources/csv_beans/posts.csv" />
@@ -13,17 +24,27 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/xml_beans/comments.xml" afterPath="$PROJECT_DIR$/src/main/resources/xml_beans/comments.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/xml_beans/posts.xml" afterPath="$PROJECT_DIR$/src/main/resources/xml_beans/posts.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/xml_beans/users.xml" afterPath="$PROJECT_DIR$/src/main/resources/xml_beans/users.xml" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/PsqlProviderTest.java" afterPath="$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/PsqlProviderTest.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.netbeans_automatic_build" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/config.properties" afterPath="$PROJECT_DIR$/target/classes/config.properties" />
       <change beforePath="$PROJECT_DIR$/target/classes/csv_beans/comments.csv" afterPath="$PROJECT_DIR$/target/classes/csv_beans/comments.csv" />
       <change beforePath="$PROJECT_DIR$/target/classes/csv_beans/posts.csv" afterPath="$PROJECT_DIR$/target/classes/csv_beans/posts.csv" />
       <change beforePath="$PROJECT_DIR$/target/classes/csv_beans/users.csv" afterPath="$PROJECT_DIR$/target/classes/csv_beans/users.csv" />
       <change beforePath="$PROJECT_DIR$/target/classes/log.log" afterPath="$PROJECT_DIR$/target/classes/log.log" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/Constants.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/Constants.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterClient.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterClient.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterServer.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterServer.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/controllers/UserController$Drop.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/controllers/UserController$Drop.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Comment.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Comment.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Post.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Post.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/User.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/User.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/WithId.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/WithId.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider$1.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/IDataProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/IDataProvider.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider$1.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider$1.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/utils/ConfigurationUtil.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/utils/ConfigurationUtil.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/xml_beans/comments.xml" afterPath="$PROJECT_DIR$/target/classes/xml_beans/comments.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/xml_beans/posts.xml" afterPath="$PROJECT_DIR$/target/classes/xml_beans/posts.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/xml_beans/users.xml" afterPath="$PROJECT_DIR$/target/classes/xml_beans/users.xml" />
@@ -33,6 +54,14 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.CsvProviderTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.CsvProviderTest.txt" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.PsqlProviderTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.PsqlProviderTest.txt" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.XmlProviderTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.XmlProviderTest.txt" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/.netbeans_automatic_build" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/CsvProviderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/CsvProviderTest.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/PsqlProviderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/PsqlProviderTest.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/XmlProviderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/XmlProviderTest.class" />
+      <change beforePath="$PROJECT_DIR$/tz/simple-twitter.xmi" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/tz/simply-twitter.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/tz/tz.docx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/tz/use-case-dia.xmi" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,34 +81,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CsvProviderTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/CsvProviderTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SimplyTwitterClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+            <state relative-caret-position="345">
+              <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Routes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/Routes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/controllers/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CsvProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/CsvProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="108" column="76" lean-forward="true" selection-start-line="108" selection-start-column="76" selection-end-line="108" selection-end-column="100" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,36 +158,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="posts.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/xml_beans/posts.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/xml_beans/users.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="posts.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/csv_beans/posts.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -139,16 +178,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WithId.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/WithId.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -181,6 +210,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/csv_beans/comments.csv" />
         <option value="$PROJECT_DIR$/src/main/resources/xml_beans/comments.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/Constants.java" />
       </list>
     </option>
   </component>
@@ -204,12 +235,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
               <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="simply_twitter_jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
@@ -263,16 +313,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="stwitter" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="entites" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stwitter" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="provider" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -296,53 +336,40 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="xml_beans" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
               <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stwitter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simply-twitter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stwitter" type="462c0819:PsiDirectoryNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -536,7 +563,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.49345794" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.49345794" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -560,6 +587,88 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/CsvProviderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml_beans/posts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml_beans/comments.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml_beans/users.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/csv_beans/posts.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/csv_beans/comments.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/csv_beans/users.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/WithId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/CsvProviderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -644,8 +753,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/WithId.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -660,7 +769,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
+        <state relative-caret-position="645">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding />
         </state>
@@ -676,16 +785,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/xml_beans/posts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="75">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/xml_beans/users.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        <state relative-caret-position="30">
+          <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -722,10 +831,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/Routes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/CsvProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="108" column="76" lean-forward="true" selection-start-line="108" selection-start-column="76" selection-end-line="108" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+        <state relative-caret-position="345">
+          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -738,10 +895,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>simply-twitter:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

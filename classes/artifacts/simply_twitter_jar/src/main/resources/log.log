@@ -1,0 +1,1 @@
+12.25:21.20.27 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:38 - java.io.FileNotFoundException: src/main/resources/csv_beans/users.csv (No such file or directory)

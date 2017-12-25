@@ -1,27 +1,94 @@
-
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:24 - _____CLEAN_____
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:26 - _____SQL provider start_____
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 199 was deleted
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 200 was deleted
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 201 was deleted
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 202 was deleted
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 203 was deleted
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 204 was deleted
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 205 was deleted
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 206 was deleted
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 207 was deleted
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:29 - _____SQL provider end_____
-12.23:21.35.34 INFO	ru.sfedu.stwitter.database.Clean:31 - _____CSV provider start_____
-12.23:21.35.35 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 1 was deleted
-12.23:21.35.35 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 2 was deleted
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 3 was deleted
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 4 was deleted
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 5 was deleted
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 6 was deleted
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 7 was deleted
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 8 was deleted
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:50 - User with id 9 was deleted
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:34 - _____CSV provider end_____
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:36 - _____XML provider start_____
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:39 - _____XML provider end_____
-12.23:21.35.36 INFO	ru.sfedu.stwitter.database.Clean:41 - -----CLEAN------
+12.25:18.50.49ERROR	ru.sfedu.stwitter.database.provider.PsqlProvider:43 - Error connection
+12.25:18.50.49ERROR	ru.sfedu.stwitter.database.provider.PsqlProvider:44 - Exception: java.sql.SQLException: No suitable driver found for "jdbc:postgresql://localhost:5432/simply_twitter";
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:99 - Comment with id 1700 was saved
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:127 - Find post with id 301
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:69 - User with id 209 was saved
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:83 - Post with id 302 was saved
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:165 - User with id 209 was updated
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:194 - Post with id 302 was updated
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:283 - Comment with id 1700 was deleted
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:243 - User with id 209 was deleted
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:119 - Could not find user with id 209
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:207 - Not found comment with id 1700
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:258 - Not found post with id 302
+12.25:18.56.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:139 - Could not find comment with id 1700
+12.25:21.07.48ERROR	ru.sfedu.stwitter.database.provider.PsqlProvider:46 - Error connection
+12.25:21.07.48ERROR	ru.sfedu.stwitter.database.provider.PsqlProvider:47 - Exception: java.io.FileNotFoundException: ~/NetBeansProjects/simply-twitter/src/main/resources/config.properties (No such file or directory)
+12.25:21.07.48 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:38 - java.io.FileNotFoundException: ~/NetBeansProjects/simply-twitter/src/main/resources/config.properties (No such file or directory)
+12.25:21.09.09ERROR	ru.sfedu.stwitter.database.provider.PsqlProvider:46 - Error connection
+12.25:21.09.09ERROR	ru.sfedu.stwitter.database.provider.PsqlProvider:47 - Exception: java.io.FileNotFoundException: ~/NetBeansProjects/simply-twitter/src/main/resources/config.properties (No such file or directory)
+12.25:21.09.09 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:38 - java.io.FileNotFoundException: ~/NetBeansProjects/simply-twitter/src/main/resources/config.properties (No such file or directory)
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:99 - Comment with id 1702 was saved
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:127 - Find post with id 303
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:69 - User with id 211 was saved
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:83 - Post with id 304 was saved
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:165 - User with id 211 was updated
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:194 - Post with id 304 was updated
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:283 - Comment with id 1702 was deleted
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:243 - User with id 211 was deleted
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:119 - Could not find user with id 211
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:207 - Not found comment with id 1702
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:258 - Not found post with id 304
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:139 - Could not find comment with id 1702
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:99 - Comment with id 2 was saved
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:127 - Find post with id 1
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:69 - User with id 2 was saved
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:83 - Post with id 2 was saved
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:165 - User with id 2 was updated
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:194 - Post with id 2 was updated
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:277 - Post with id 2 was deleted
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:286 - Comment with id 2 was deleted
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:243 - User with id 2 was deleted
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:119 - Could not find user with id 2
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:207 - Not found comment with id 2
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:258 - Not found post with id 2
+12.25:21.11.02 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:139 - Could not find comment with id 2
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:90 - Comment with id 2 was saved
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:118 - Find post with id 1
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:62 - User with id 2 was saved
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:75 - Post with id 2 was saved
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:156 - User with id 2 was updated
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:185 - Post with id 2 was updated
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:274 - Comment with id 2 was deleted
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:234 - User with id 2 was deleted
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:110 - Could not find user with id 2
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:198 - Not found comment with id 2
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:249 - Not found post with id 2
+12.25:21.11.03 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:130 - Could not find comment with id 2
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:99 - Comment with id 1704 was saved
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:127 - Find post with id 305
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:69 - User with id 213 was saved
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:83 - Post with id 306 was saved
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:165 - User with id 213 was updated
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:194 - Post with id 306 was updated
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:283 - Comment with id 1704 was deleted
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:243 - User with id 213 was deleted
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:119 - Could not find user with id 213
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:207 - Not found comment with id 1704
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:258 - Not found post with id 306
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:139 - Could not find comment with id 1704
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:99 - Comment with id 3 was saved
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:127 - Find post with id 2
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:69 - User with id 3 was saved
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:83 - Post with id 3 was saved
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:165 - User with id 3 was updated
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:194 - Post with id 3 was updated
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:277 - Post with id 3 was deleted
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:286 - Comment with id 3 was deleted
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:243 - User with id 3 was deleted
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:119 - Could not find user with id 3
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:207 - Not found comment with id 3
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:258 - Not found post with id 3
+12.25:21.18.31 INFO	ru.sfedu.stwitter.database.provider.PsqlProvider:139 - Could not find comment with id 3
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:90 - Comment with id 3 was saved
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:118 - Find post with id 2
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:62 - User with id 3 was saved
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:75 - Post with id 3 was saved
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:156 - User with id 3 was updated
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:185 - Post with id 3 was updated
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:274 - Comment with id 3 was deleted
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:234 - User with id 3 was deleted
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:110 - Could not find user with id 3
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:198 - Not found comment with id 3
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:249 - Not found post with id 3
+12.25:21.18.32 INFO	ru.sfedu.stwitter.database.provider.CsvProvider:130 - Could not find comment with id 3

@@ -1,5 +1,6 @@
 package ru.sfedu.stwitter.utils;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -13,6 +14,7 @@ import java.util.Properties;
 public class ConfigurationUtil {
 
     private static final String DEFAULT_CONFIG_PATH = "/config.properties";
+    private static String defaultPath = "/Users/daniel/NetBeansProjects/simply-twitter/src/main/resources/config.properties"; //absolute to config
     private static final Properties configuration = new Properties();
 
     /**
@@ -34,7 +36,7 @@ public class ConfigurationUtil {
      * @throws IOException In case of the configuration file read failure
      */
     private static void loadConfiguration() throws IOException{
-        InputStream in = DEFAULT_CONFIG_PATH.getClass().getResourceAsStream(DEFAULT_CONFIG_PATH);
+        FileInputStream in = new FileInputStream(defaultPath);
         try {
             configuration.load(in);
         } catch (IOException ex) {
@@ -51,6 +53,10 @@ public class ConfigurationUtil {
      */
     public static String getConfigurationEntry(String key) throws IOException{
         return getConfiguration().getProperty(key);
+    }
+    
+    public static void setDefaultPath(String path){
+        defaultPath = path;
     }
     
 }

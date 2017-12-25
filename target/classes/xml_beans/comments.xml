@@ -1,0 +1,8 @@
+<beans>
+   <comment Id="1" UserId="1" PostId="1">
+      <content>New user comment</content>
+   </comment>
+   <comment Id="2" UserId="2" PostId="2">
+      <content>New user comment</content>
+   </comment>
+</beans>

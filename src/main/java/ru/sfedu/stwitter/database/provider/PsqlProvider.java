@@ -35,11 +35,10 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
         url = "jdbc:postgresql://localhost:5432/simply_twitter";
         login = "daniel";
         password = "111";
-       
         try {
-//            url = ConfigurationUtil.getConfigurationEntry(Constants.DB_URL);
-//            login = ConfigurationUtil.getConfigurationEntry(Constants.DB_LOGIN);
-//            password = ConfigurationUtil.getConfigurationEntry(Constants.DB_PASSWORD);
+            url = ConfigurationUtil.getConfigurationEntry(Constants.DB_URL);
+            login = ConfigurationUtil.getConfigurationEntry(Constants.DB_LOGIN);
+            password = ConfigurationUtil.getConfigurationEntry(Constants.DB_PASSWORD);
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(url, login, password);
             statement = conn.createStatement();

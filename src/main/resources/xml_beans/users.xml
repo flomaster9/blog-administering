@@ -1,0 +1,4 @@
+<beans>
+   <user Name="GuestName" Id="1" Login="GuestLogin"/>
+   <user Name="GuestName" Id="2" Login="GuestLogin"/>
+</beans>

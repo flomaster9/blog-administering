@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 import ru.sfedu.stwitter.database.entites.*;
 import ru.sfedu.stwitter.database.provider.*;
+import ru.sfedu.stwitter.utils.ConfigurationUtil;
 
 /**
  *
@@ -20,6 +21,10 @@ public class SimplyTwitterClient {
     static String action;
 
     public static void main(String args[]) {
+        String path = System.getProperty("PATH"); 
+        if(path != null){ 
+            ConfigurationUtil.setDefaultPath(System.getProperty("PATH")); 
+        }
         while (true) {
             choose = scanner.nextLine();
             
