@@ -71,7 +71,7 @@ public class Seed {
     
     private static User seedUser(String planet) {
         user = new User(planet + "Login", planet + "Name");
-        result = dataProvider.saveRecord(user, EntityType.USER);
+        result = dataProvider.saveRecord(user);
             
         if (result.getStatus() != ResultType.SUCCESS.ordinal()) {
             log.info("Exit with status " + result.getStatus());
@@ -88,7 +88,7 @@ public class Seed {
         String postContent = "hello, my name is " +  user.getName() + " and here is my " + currentPost + " post!";
         
         post = new Post(user.getId(), postTitle, postContent);
-        result = dataProvider.saveRecord(post, EntityType.POST);
+        result = dataProvider.saveRecord(post);
             
         if (result.getStatus() != ResultType.SUCCESS.ordinal()) {
             log.info("Exit with status " + result.getStatus());
@@ -104,7 +104,7 @@ public class Seed {
         String commentContent = "Hello, my name is " +  user.getName() + " and here is my " + currentComment + " comment for post with title: " + post.getTitle() + " !";
         
         comment = new Comment(post.getId(), user.getId(), commentContent);
-        result = dataProvider.saveRecord(comment, EntityType.COMMENT);
+        result = dataProvider.saveRecord(comment);
             
         if (result.getStatus() != ResultType.SUCCESS.ordinal()) {
             log.info("Exit with status " + result.getStatus());

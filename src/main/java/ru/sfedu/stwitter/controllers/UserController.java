@@ -47,7 +47,7 @@ public class UserController {
             InputStream stream = ex.getRequestBody();
             User newUser = JSON.parseUserStream(stream);
 
-            Result status = instanse.saveRecord(newUser, EntityType.USER);
+            Result status = instanse.saveRecord(newUser);
             String responseJson = JSON.stringify(status);
             
             ex.sendResponseHeaders(200, responseJson.getBytes().length);

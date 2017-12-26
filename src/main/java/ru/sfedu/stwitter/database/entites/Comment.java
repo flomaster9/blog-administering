@@ -10,34 +10,38 @@ import org.simpleframework.xml.Root;
  * @author daniel
  */
 @Root(name="comment")
-public class Comment implements WithId {
-    @CsvBindByPosition(position = 0)
-    private int id;
-    @CsvBindByPosition(position = 1)
+public class Comment extends WithId {
+//    @CsvBindByPosition(position = 0)
+//    private int id;
+    
+    @CsvBindByName
     private int postId;
-    @CsvBindByPosition(position = 2)
+    @CsvBindByName
     private int userId;
     @Element(name = "content")
-    @CsvBindByPosition(position = 3)
+    @CsvBindByName
     private String content;
     
     public Comment(int postId, int userId, String content) {
+        super(EntityType.COMMENT);
         this.postId = postId;
         this.userId = userId;
         this.content = content;
     }
     
-    public Comment(){}
-    
-    @Attribute(name="Id")
-    public int getId() {
-        return this.id;
+    public Comment(){
+        super(EntityType.COMMENT);
     }
     
-    @Attribute(name="Id")
-    public void setId(int id) {
-        this.id = id;
-    }
+//    @Attribute(name="Id")
+//    public int getId() {
+//        return this.id;
+//    }
+//    
+//    @Attribute(name="Id")
+//    public void setId(int id) {
+//        this.id = id;
+//    }
     
     @Attribute(name="PostId")
     public int getPostId() {
@@ -78,6 +82,6 @@ public class Comment implements WithId {
     
     @Override
     public String toString() {
-        return "id: " + id + ", postId: " + postId + ", userId: " + userId + ", content: " + content;
+        return "id: " + getId() + ", postId: " + postId + ", userId: " + userId + ", content: " + content;
     }
 }

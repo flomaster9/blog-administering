@@ -1,8 +1,5 @@
 package ru.sfedu.stwitter.database.provider;
 import java.io.File;
-import java.io.FileReader;
-import java.io.Reader;
-import java.io.StringReader;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -32,42 +29,42 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
     }
     
     private Result saveUserRecords(List<User> list) {
-        XmlUserList userList = new XmlUserList();
+        XmlElementList userList = new XmlElementList();
         userList.setBeans(list);
         try {
             File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_USERS));
             serializer.write(userList, source);
             return new Result(ResultType.SUCCESS.ordinal());
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+            log.info(ex);
         }
         
         return new Result(ResultType.FAILURE.ordinal());
     }
     
     private Result savePostRecords(List<Post> list) {
-        XmlPostList postList = new XmlPostList();
+        XmlElementList postList = new XmlElementList();
         postList.setBeans(list);
         try {
             File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_POSTS));
             serializer.write(postList, source);
             return new Result(ResultType.SUCCESS.ordinal());
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+            log.info(ex);
         }
         
         return new Result(ResultType.FAILURE.ordinal());
     }
         
     private Result saveCommentRecords(List<Comment> list) {
-        XmlCommentList commentList = new XmlCommentList();
+        XmlElementList commentList = new XmlElementList();
         commentList.setBeans(list);
         try {
             File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_COMMENTS));
             serializer.write(commentList, source);
             return new Result(ResultType.SUCCESS.ordinal());
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+            log.info(ex);
         }
         
         return new Result(ResultType.FAILURE.ordinal());
@@ -90,12 +87,12 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
     }
     
     @Override
-    public Result saveRecord(T bean, EntityType type) {
+    public Result saveRecord(T bean) {
         Result result = null;
         List<T> records = null;
         int userId = 0;
         int postId = 0;
-        switch(type) {
+        switch(bean.getType()) {
             case USER:
                 records = (List<T>) getAllUserRecords();
                 bean.setId(getLastRecordId(records));
@@ -237,8 +234,8 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
     }
     
     @Override
-    public Result updateRecord(T bean, EntityType type) {
-        switch (type){
+    public Result updateRecord(T bean) {
+        switch (bean.getType()){
             case USER:
                 return updateUserRecord(bean);
             case POST:
@@ -283,43 +280,43 @@ public class XmlProvider<T extends WithId> implements IDataProvider<T> {
     }
     
     private List<User> getAllUserRecords() {
-        XmlUserList userList = new XmlUserList();
+        XmlElementList userList = new XmlElementList();
         List<User> records = new LinkedList<User>();
         try {
             File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_USERS));
-            userList = serializer.read(XmlUserList.class, source);
+            userList = serializer.read(XmlElementList.class, source);
             if (userList.getBeans() != null)
                 records = userList.getBeans();
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+            log.error(ex);
         }
         return records;
     }
  
     private List<Post> getAllPostRecords() {
-        XmlPostList postList = new XmlPostList();
+        XmlElementList postList = new XmlElementList();
         List<Post> records = new LinkedList<Post>();
         try {
             File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_POSTS));
-            postList = serializer.read(XmlPostList.class, source);
+            postList = serializer.read(XmlElementList.class, source);
             if (postList.getBeans() != null)
                 records = postList.getBeans();
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+            log.error(ex);
         }
         return records;
     }
     
     private List<Comment> getAllCommentRecords() {
-        XmlCommentList commentList = new XmlCommentList();
+        XmlElementList commentList = new XmlElementList();
         List<Comment> records = new LinkedList<Comment>();
         try {
             File source = new File(ConfigurationUtil.getConfigurationEntry(Constants.XML_PATH_COMMENTS));
-            commentList = serializer.read(XmlCommentList.class, source);
+            commentList = serializer.read(XmlElementList.class, source);
             if (commentList.getBeans() != null)
                 records = commentList.getBeans();
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(XmlProvider.class.getName()).log(Level.SEVERE, null, ex);
+            log.error(ex);
         }
         return records;
     }

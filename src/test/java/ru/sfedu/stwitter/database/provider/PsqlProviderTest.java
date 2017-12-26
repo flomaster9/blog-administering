@@ -32,15 +32,15 @@ public class PsqlProviderTest {
     public static void setUpClass() {
         Result result;
         User user = new User("GuestLogin", "GuestName");
-        result = instance.saveRecord(user, EntityType.USER);
+        result = instance.saveRecord(user);
         userId = result.getBean().getId();
 
         Post post = new Post(userId, "New post title", "New post content");
-        result = instance.saveRecord(post, EntityType.POST);
+        result = instance.saveRecord(post);
         postId = result.getBean().getId();
         
         Comment comment = new Comment(postId, userId, "New user comment");
-        result = instance.saveRecord(comment, EntityType.COMMENT);
+        result = instance.saveRecord(comment);
         commentId = result.getBean().getId();
     }
     
@@ -64,7 +64,7 @@ public class PsqlProviderTest {
     @Test
     public void testASaveUserRecord() {
         User user = new User("GuestLogin", "GuestName");
-        Result result = instance.saveRecord(user, EntityType.USER);
+        Result result = instance.saveRecord(user);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
             user = (User) result.getBean();
@@ -78,7 +78,7 @@ public class PsqlProviderTest {
     @Test
     public void testBSavePostRecord() {
         Post post = new Post(userId, "New post title", "New post content");
-        Result result = instance.saveRecord(post, EntityType.POST);
+        Result result = instance.saveRecord(post);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
             post = (Post) result.getBean();
@@ -94,7 +94,7 @@ public class PsqlProviderTest {
     @Test
     public void testCSaveCommentRecord() {
         Comment comment = new Comment(postId, userId, "New user comment");
-        Result result = instance.saveRecord(comment, EntityType.COMMENT);
+        Result result = instance.saveRecord(comment);
         
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
             comment = (Comment) result.getBean();
@@ -162,7 +162,7 @@ public class PsqlProviderTest {
         User user = (User) result.getBean();
         user.setLogin("UpdatedGuestLogin");
         user.setName("UpdatedGuestName");
-        result = instance.updateRecord(user, EntityType.USER);
+        result = instance.updateRecord(user);
         
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
             log.info("User with id " + result.getBean().getId() + " was updated");
@@ -188,10 +188,10 @@ public class PsqlProviderTest {
         Post post = (Post) result.getBean();
         post.setTitle("Updated post title");
         post.setContent("Updated post content");
-        result = instance.updateRecord(post, EntityType.POST);
+        result = instance.updateRecord(post);
 
         if (result.getStatus() == ResultType.SUCCESS.ordinal())
-            result = instance.updateRecord(post, EntityType.POST);
+            result = instance.updateRecord(post);
 
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
             log.info("Post with id " + result.getBean().getId() + " was updated");
@@ -216,7 +216,7 @@ public class PsqlProviderTest {
 
         Comment comment = (Comment) result.getBean();
         comment.setContent("Updated users comment");
-        result = instance.updateRecord(comment, EntityType.COMMENT);
+        result = instance.updateRecord(comment);
 
         if (result.getStatus() == ResultType.SUCCESS.ordinal()) {
             log.info("Comment with id " + result.getBean().getId() + " was updated");

@@ -11,38 +11,41 @@ import org.simpleframework.xml.Root;
  * @author daniel
  */
 @Root(name="post")
-public class Post implements WithId {
-    @CsvBindByPosition(position = 0)
-    private int id;
-    @CsvBindByPosition(position = 1)
+public class Post extends WithId {
+//    @CsvBindByName
+//    private int id;
+    @CsvBindByName
     private int userId;
     @Element(name = "title")
-    @CsvBindByPosition(position = 2)
+    @CsvBindByName
     private String title;
     @Element(name = "content")
-    @CsvBindByPosition(position = 3)
+    @CsvBindByName
     private String content;
     
     public Post(int userId, String title, String content) {
+        super(EntityType.POST);
         this.userId = userId;
         this.title = title;
         this.content = content;
     }
 
-    public Post() {}
-    
-    
-    @Override
-    @Attribute(name="Id")
-    public int getId() {
-        return this.id;
+    public Post() {
+        super(EntityType.POST);
     }
     
-    @Override
-    @Attribute(name="Id")
-    public void setId(int id) {
-        this.id = id;
-    }
+    
+//    @Override
+//    @Attribute(name="Id")
+//    public int getId() {
+//        return this.id;
+//    }
+    
+//    @Override
+//    @Attribute(name="Id")
+//    public void setId(int id) {
+//        this.id = id;
+//    }
     
     @Attribute(name="UserId")
     public int getUserId() {
@@ -82,6 +85,6 @@ public class Post implements WithId {
     
     @Override
     public String toString() {
-        return "id: " + id + ", userId: " + userId + ", title: " + title + ", content: " + content;
+        return "id: " + getId() + ", userId: " + userId + ", title: " + title + ", content: " + content;
     }
 }

@@ -12,32 +12,36 @@ import org.simpleframework.xml.Root;
  */
 
 @Root(name="user")
-public class User implements WithId {
-    @CsvBindByPosition(position = 0)
-    private int id;
-    @CsvBindByPosition(position = 1)
+public class User extends WithId {
+//    @CsvBindByPosition(position = 0)
+//    private int id;
+    @CsvBindByName
     private String login;
-    @CsvBindByPosition(position = 2)
+    @CsvBindByName
     private String name;
 
-    public User() {}
+    public User() {
+        super(EntityType.USER);
+    }
 
     public User(String login, String name) {
+        super(EntityType.USER);
+
         this.login = login;
         this.name = name;
     }
 
-    @Override
-    @Attribute(name="Id")
-    public int getId() {
-        return this.id;
-    }
-    
-    @Override
-    @Attribute(name="Id")
-    public void setId(int id) {
-        this.id = id;
-    }
+//    @Override
+//    @Attribute(name="Id")
+//    public int getId() {
+//        return this.id;
+//    }
+//    
+//    @Override
+//    @Attribute(name="Id")
+//    public void setId(int id) {
+//        this.id = id;
+//    }
     
     @Attribute(name="Login")
     public String getLogin() {
@@ -71,7 +75,7 @@ public class User implements WithId {
     
     @Override
     public String toString() {
-        return "id: " + id + ", login: " + login + ", name: " + name;
+        return "id: " + getId() + ", login: " + login + ", name: " + name;
     }
 }
        

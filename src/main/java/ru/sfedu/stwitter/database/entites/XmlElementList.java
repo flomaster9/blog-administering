@@ -9,22 +9,22 @@ import org.simpleframework.xml.Root;
  * @author daniel
  */
 @Root(name="beans")
-public class XmlUserList {
+public class XmlElementList<T> {
 
-    @ElementList(inline=true, name="user")
-    private List<User> beans;
+    @ElementList(inline=true, name="beans")
+    private List<T> beans;
 
-    public XmlUserList(List<User> beans) {
+    public XmlElementList(List<T> beans) {
         this.beans = beans;
     }
 
-    public XmlUserList() {}
+    public XmlElementList() {}
 
-    public List<User> getBeans() {
+    public List<T> getBeans() {
         return beans;
     }
 
-    public void setBeans(List<User> beans) {
+    public void setBeans(List<T> beans) {
         this.beans = beans;
     }
 }

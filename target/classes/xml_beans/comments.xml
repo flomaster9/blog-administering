@@ -1,11 +1,8 @@
 <beans>
-   <comment Id="1" UserId="1" PostId="1">
+   <object class="ru.sfedu.stwitter.database.entites.Comment" Id="1" PostId="1" UserId="1">
       <content>New user comment</content>
-   </comment>
-   <comment Id="2" UserId="2" PostId="2">
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Comment" Id="2" PostId="2" UserId="3">
       <content>New user comment</content>
-   </comment>
-   <comment Id="3" UserId="3" PostId="3">
-      <content>New user comment</content>
-   </comment>
+   </object>
 </beans>

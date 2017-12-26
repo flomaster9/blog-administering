@@ -32,9 +32,9 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
     
     @Override
     public void initDataSource() {
-        url = "jdbc:postgresql://localhost:5432/simply_twitter";
-        login = "daniel";
-        password = "111";
+//        url = "jdbc:postgresql://localhost:5432/simply_twitter";
+//        login = "daniel";
+//        password = "111";
         try {
             url = ConfigurationUtil.getConfigurationEntry(Constants.DB_URL);
             login = ConfigurationUtil.getConfigurationEntry(Constants.DB_LOGIN);
@@ -92,11 +92,11 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
     }
 
     @Override
-    public Result saveRecord(T bean, EntityType type){
+    public Result saveRecord(T bean){
         String query = "";
         int userId = 0;
         int postId = 0;
-        switch (type){
+        switch (bean.getType()){
             case USER:
                 query = "INSERT INTO users(login, name)" +
                         " VALUES (" + bean.toInsert() + ");";
@@ -128,7 +128,7 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
             log.error(e);
             return new Result(ResultType.SQL_EXCEPTION.ordinal());
         }
-        return new Result(ResultType.SUCCESS.ordinal(), getSavedRecord(type));
+        return new Result(ResultType.SUCCESS.ordinal(), getSavedRecord(bean.getType()));
     }
     
     private Result dependencyDestroy(int id, EntityType type) {
@@ -199,15 +199,15 @@ public class PsqlProvider<T extends WithId> implements IDataProvider<T> {
     }
     
     @Override
-    public Result updateRecord(T bean, EntityType type) {
-        Result result = getRecordById(bean.getId(), type);
+    public Result updateRecord(T bean) {
+        Result result = getRecordById(bean.getId(), bean.getType());
         
         if (result.getStatus() != ResultType.SUCCESS.ordinal())
             return result;
         
         String query = "";
         
-        switch (type){
+        switch (bean.getType()){
             case USER:
                 query = "UPDATE users set (login, name) = (" + bean.toInsert() + ") where id = " + bean.getId() + ";";
                 break;

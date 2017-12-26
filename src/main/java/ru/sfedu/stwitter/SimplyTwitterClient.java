@@ -195,7 +195,7 @@ public class SimplyTwitterClient {
                 String name = subparams[1];
                 
                 User user = new User(login, name);
-                result = dataProvider.saveRecord(user, EntityType.USER);
+                result = dataProvider.saveRecord(user);
                 break;
             }
             case "post": {
@@ -205,7 +205,7 @@ public class SimplyTwitterClient {
                 String content = subparams[2];
                 
                 Post post = new Post(userId, title, content);
-                result = dataProvider.saveRecord(post, EntityType.POST);
+                result = dataProvider.saveRecord(post);
                 break;
             }
             case "comment": {
@@ -215,7 +215,7 @@ public class SimplyTwitterClient {
                 String content = subparams[2];
                 
                 Comment comment = new Comment(postId, userId, content);
-                result = dataProvider.saveRecord(comment, EntityType.COMMENT);
+                result = dataProvider.saveRecord(comment);
                 break;
             }
             default:
@@ -258,7 +258,7 @@ public class SimplyTwitterClient {
                 user.setName(name);
                 user.setLogin(login);
 
-                dataProvider.updateRecord(user, EntityType.USER);
+                dataProvider.updateRecord(user);
                 break;
             }
             case "post": {
@@ -278,7 +278,7 @@ public class SimplyTwitterClient {
                 post.setTitle(title);
                 post.setContent(content);
 
-                dataProvider.updateRecord(post, EntityType.POST);
+                dataProvider.updateRecord(post);
                 break;
             }
             case "comment":
@@ -296,7 +296,7 @@ public class SimplyTwitterClient {
                 Comment comment = (Comment) result.getBean();
                 comment.setContent(content);
 
-                dataProvider.updateRecord(comment, EntityType.COMMENT);
+                dataProvider.updateRecord(comment);
                 break;
             default:
                 System.out.println("Invalid entity");

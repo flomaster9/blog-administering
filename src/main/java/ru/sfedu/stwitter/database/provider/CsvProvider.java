@@ -233,11 +233,11 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
     }
     
     @Override
-    public Result saveRecord(T bean, EntityType type) {
+    public Result saveRecord(T bean) {
         Result result = null;
         int userId = 0;
         int postId = 0;
-        switch(type) {
+        switch(bean.getType()) {
             case USER:
                 records = getAllUserRecords();
                 bean.setId(getLastRecordId(records));
@@ -318,7 +318,7 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
         if (result.getStatus() == ResultType.NOT_FOUND.ordinal())
             return result;
         
-        switch(type) {
+        switch(result.getBean().getType()) {
             case USER:
                 dependencyDestroy(id, EntityType.USER);
                 return deleteUserRecord(id);
@@ -348,13 +348,13 @@ public class CsvProvider<T extends WithId> implements IDataProvider<T> {
     }
     
     @Override
-    public Result updateRecord(T bean, EntityType type) {
-        Result result = getRecordById(bean.getId(), type);
+    public Result updateRecord(T bean) {
+        Result result = getRecordById(bean.getId(), bean.getType());
         
         if (result.getStatus() == ResultType.NOT_FOUND.ordinal())
             return result;
         
-        switch(type) {
+        switch(bean.getType()) {
             case USER:
                 return updateUserRecord(bean);
             case POST:

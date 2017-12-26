@@ -1,14 +1,10 @@
 <beans>
-   <post Id="1" UserId="1">
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="1" UserId="1">
       <title>New post title</title>
       <content>New post content</content>
-   </post>
-   <post Id="2" UserId="2">
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="2" UserId="3">
       <title>New post title</title>
       <content>New post content</content>
-   </post>
-   <post Id="3" UserId="3">
-      <title>New post title</title>
-      <content>New post content</content>
-   </post>
+   </object>
 </beans>

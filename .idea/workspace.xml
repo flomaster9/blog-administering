@@ -7,9 +7,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d226da8-0ee5-421d-8206-4ce44813a4f6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/docs/simply-twitter.vpp" afterPath="$PROJECT_DIR$/docs/simply-twitter.vpp" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/controllers/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/controllers/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/Seed.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/Seed.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/Comment.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/Post.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/Post.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/User.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/User.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/WithId.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/WithId.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/XmlCommentList.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/XmlPostList.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/XmlUserList.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/XmlElementList.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/CsvProvider.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/CsvProvider.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/IDataProvider.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/IDataProvider.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/PsqlProvider.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/PsqlProvider.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/XmlProvider.java" afterPath="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/XmlProvider.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/csv_beans/comments.csv" afterPath="$PROJECT_DIR$/src/main/resources/csv_beans/comments.csv" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/csv_beans/posts.csv" afterPath="$PROJECT_DIR$/src/main/resources/csv_beans/posts.csv" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/csv_beans/users.csv" afterPath="$PROJECT_DIR$/src/main/resources/csv_beans/users.csv" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log.log" afterPath="$PROJECT_DIR$/src/main/resources/log.log" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/xml_beans/comments.xml" afterPath="$PROJECT_DIR$/src/main/resources/xml_beans/comments.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/xml_beans/posts.xml" afterPath="$PROJECT_DIR$/src/main/resources/xml_beans/posts.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/xml_beans/users.xml" afterPath="$PROJECT_DIR$/src/main/resources/xml_beans/users.xml" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/CsvProviderTest.java" afterPath="$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/CsvProviderTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/PsqlProviderTest.java" afterPath="$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/PsqlProviderTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/XmlProviderTest.java" afterPath="$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/XmlProviderTest.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/csv_beans/comments.csv" afterPath="$PROJECT_DIR$/target/classes/csv_beans/comments.csv" />
+      <change beforePath="$PROJECT_DIR$/target/classes/csv_beans/posts.csv" afterPath="$PROJECT_DIR$/target/classes/csv_beans/posts.csv" />
+      <change beforePath="$PROJECT_DIR$/target/classes/csv_beans/users.csv" afterPath="$PROJECT_DIR$/target/classes/csv_beans/users.csv" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log.log" afterPath="$PROJECT_DIR$/target/classes/log.log" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterClient.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/SimplyTwitterClient.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/controllers/UserController$Create.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/controllers/UserController$Create.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/controllers/UserController$Drop.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/controllers/UserController$Drop.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/Seed.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/Seed.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Comment.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Comment.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Post.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Post.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Result.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/Result.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/User.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/User.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/WithId.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/WithId.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/XmlCommentList.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/XmlPostList.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/entites/XmlUserList.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider$1.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/CsvProvider.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/IDataProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/IDataProvider.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider$1.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/PsqlProvider.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider$1.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider.class" afterPath="$PROJECT_DIR$/target/classes/ru/sfedu/stwitter/database/provider/XmlProvider.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xml_beans/comments.xml" afterPath="$PROJECT_DIR$/target/classes/xml_beans/comments.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xml_beans/posts.xml" afterPath="$PROJECT_DIR$/target/classes/xml_beans/posts.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/xml_beans/users.xml" afterPath="$PROJECT_DIR$/target/classes/xml_beans/users.xml" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.sfedu.stwitter.database.provider.CsvProviderTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.sfedu.stwitter.database.provider.CsvProviderTest.xml" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.sfedu.stwitter.database.provider.PsqlProviderTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.sfedu.stwitter.database.provider.PsqlProviderTest.xml" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.sfedu.stwitter.database.provider.XmlProviderTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ru.sfedu.stwitter.database.provider.XmlProviderTest.xml" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.CsvProviderTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.CsvProviderTest.txt" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.PsqlProviderTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.PsqlProviderTest.txt" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.XmlProviderTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/ru.sfedu.stwitter.database.provider.XmlProviderTest.txt" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/CsvProviderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/CsvProviderTest.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/PsqlProviderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/PsqlProviderTest.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/XmlProviderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/sfedu/stwitter/database/provider/XmlProviderTest.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +85,18 @@
     <favorites_list name="simply-twitter" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="XmlElementList.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/XmlElementList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -60,6 +128,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/SimplyTwitterClient.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sfedu/stwitter/database/provider/CsvProviderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/ResultType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/XmlCommentList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/XmlElementList.java" />
       </list>
     </option>
   </component>
@@ -221,7 +291,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SimplyTwitterClient">
+  <component name="RunManager" selected="JUnit.ru.sfedu.stwitter.database.provider in simply-twitter">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -307,6 +377,31 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="ru.sfedu.stwitter.database.provider in simply-twitter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.sfedu.stwitter.database.provider.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="simply-twitter" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.sfedu.stwitter.database.provider" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -347,14 +442,16 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JUnit.XmlProviderTest" />
       <item index="1" class="java.lang.String" itemvalue="Application.SimplyTwitterClient" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ru.sfedu.stwitter.database.provider in simply-twitter" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.SimplyTwitterClient" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.XmlProviderTest" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ru.sfedu.stwitter.database.provider in simply-twitter" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SimplyTwitterClient" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.XmlProviderTest" />
       </list>
     </recent_temporary>
   </component>
@@ -384,18 +481,22 @@
     <history-entry file="XmlProviderTest - 2017.12.18 at 19h 27m 14s.xml">
       <configuration name="XmlProviderTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ru_sfedu_stwitter_database_provider_in_simply-twitter - 2017.12.26 at 11h 58m 25s.xml">
+      <configuration name="ru.sfedu.stwitter.database.provider in simply-twitter" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2140266" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35066506" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35066506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35066506" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -411,7 +512,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -425,22 +525,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/IDataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/PsqlProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/provider/XmlProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -814,6 +898,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/XmlCommentList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/sfedu/stwitter/database/entites/XmlElementList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
