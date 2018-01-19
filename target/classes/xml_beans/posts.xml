@@ -1,9 +1,53 @@
 <beans>
-   <object class="ru.sfedu.stwitter.database.entites.Post" Id="1" UserId="1">
-      <title>New post title</title>
-      <content>New post content</content>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="7" UserId="4">
+      <title>MarsLogin 1 post title</title>
+      <content>hello, my name is MarsName and here is my 1 post!</content>
    </object>
-   <object class="ru.sfedu.stwitter.database.entites.Post" Id="2" UserId="3">
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="8" UserId="4">
+      <title>MarsLogin 2 post title</title>
+      <content>hello, my name is MarsName and here is my 2 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="9" UserId="5">
+      <title>JupiterLogin 1 post title</title>
+      <content>hello, my name is JupiterName and here is my 1 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="10" UserId="5">
+      <title>JupiterLogin 2 post title</title>
+      <content>hello, my name is JupiterName and here is my 2 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="11" UserId="6">
+      <title>SaturnLogin 1 post title</title>
+      <content>hello, my name is SaturnName and here is my 1 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="12" UserId="6">
+      <title>SaturnLogin 2 post title</title>
+      <content>hello, my name is SaturnName and here is my 2 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="13" UserId="7">
+      <title>UranusLogin 1 post title</title>
+      <content>hello, my name is UranusName and here is my 1 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="14" UserId="7">
+      <title>UranusLogin 2 post title</title>
+      <content>hello, my name is UranusName and here is my 2 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="15" UserId="8">
+      <title>NeptuneLogin 1 post title</title>
+      <content>hello, my name is NeptuneName and here is my 1 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="16" UserId="8">
+      <title>NeptuneLogin 2 post title</title>
+      <content>hello, my name is NeptuneName and here is my 2 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="17" UserId="9">
+      <title>PlutoLogin 1 post title</title>
+      <content>hello, my name is PlutoName and here is my 1 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="18" UserId="9">
+      <title>PlutoLogin 2 post title</title>
+      <content>hello, my name is PlutoName and here is my 2 post!</content>
+   </object>
+   <object class="ru.sfedu.stwitter.database.entites.Post" Id="20" UserId="2">
       <title>New post title</title>
       <content>New post content</content>
    </object>

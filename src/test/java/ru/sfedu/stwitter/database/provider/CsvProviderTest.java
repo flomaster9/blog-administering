@@ -67,12 +67,12 @@ public class CsvProviderTest {
             fail("Test failure with " + result.getStatus());
         }
     }
-    
+
     @Test
     public void testBSavePostRecord() {
         Post post = new Post(userId, "New post title", "New post content");
         Result result = instance.saveRecord(post);
-        
+
         if(result.getStatus() == ResultType.SUCCESS.ordinal()) {
             postId = post.getId();
             log.info("Post with id " + post.getId() + " was saved");
@@ -80,7 +80,7 @@ public class CsvProviderTest {
             log.info("User with id " + userId + " is missing");
         } else {
             fail("Test failure with " + result.getStatus());
-        }  
+        }
     }
     
     @Test
