@@ -30,18 +30,6 @@ public class User extends WithId {
         this.login = login;
         this.name = name;
     }
-
-//    @Override
-//    @Attribute(name="Id")
-//    public int getId() {
-//        return this.id;
-//    }
-//    
-//    @Override
-//    @Attribute(name="Id")
-//    public void setId(int id) {
-//        this.id = id;
-//    }
     
     @Attribute(name="Login")
     public String getLogin() {

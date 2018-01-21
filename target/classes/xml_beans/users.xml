@@ -1,3 +1,10 @@
 <beans>
-   <object class="ru.sfedu.stwitter.database.entites.User" Id="2" Name="GuestName" Login="GuestLogin"/>
+   <object class="ru.sfedu.stwitter.database.entites.User" Id="1" Name="MercuryName" Login="MercuryLogin"/>
+   <object class="ru.sfedu.stwitter.database.entites.User" Id="2" Name="VenusName" Login="VenusLogin"/>
+   <object class="ru.sfedu.stwitter.database.entites.User" Id="3" Name="GuestName" Login="GuestLogin"/>
+   <object class="ru.sfedu.stwitter.database.entites.User" Id="4" Name="GuestName" Login="GuestLogin"/>
+   <object class="ru.sfedu.stwitter.database.entites.User" Id="5" Name="GuestName" Login="GuestLogin"/>
+   <object class="ru.sfedu.stwitter.database.entites.User" Id="6" Name="GuestName" Login="GuestLogin"/>
+   <object class="ru.sfedu.stwitter.database.entites.User" Id="7" Name="GuestName" Login="GuestLogin"/>
+   <object class="ru.sfedu.stwitter.database.entites.User" Id="8" Name="GuestName" Login="GuestLogin"/>
 </beans>

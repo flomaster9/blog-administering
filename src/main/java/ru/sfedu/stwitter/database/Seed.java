@@ -43,19 +43,19 @@ public class Seed {
         log.info("-----SEEDS------");
     }
     
-    private static void seed(IDataProvider dataProvider) {   
+    public static void seed(IDataProvider dataProvider) {
         List<User> createdUsers = new ArrayList<User>();
         List<Post> createdPosts = new ArrayList<Post>();
         List<Comment> createdComments = new ArrayList<Comment>();
         
         planets.stream().forEach(planet -> {
-            createdUsers.add(seedUser(planet));
+            createdUsers.add(seedUser(planet, dataProvider));
         });
         
         createdUsers.stream().forEach(user -> {
             if (user == null) return;
             for (int i = 1; i < postCounter + 1 ; i++)
-                createdPosts.add(seedUserPosts(user, i));
+                createdPosts.add(seedUserPosts(user, i, dataProvider));
         });
         
         createdPosts.stream().forEach(post -> {
@@ -64,14 +64,14 @@ public class Seed {
             createdUsers.stream().forEach(user -> {
                 if (post == null) return;
                 for (int i = 1; i < commentCounter + 1 ; i++)
-                    createdComments.add(seedUserPostComments(post, user, i));
+                    createdComments.add(seedUserPostComments(post, user, i, dataProvider));
             });
         });
     }
     
-    private static User seedUser(String planet) {
+    private static User seedUser(String planet, IDataProvider provider) {
         user = new User(planet + "Login", planet + "Name");
-        result = dataProvider.saveRecord(user);
+        result = provider.saveRecord(user);
             
         if (result.getStatus() != ResultType.SUCCESS.ordinal()) {
             log.info("Exit with status " + result.getStatus());
@@ -83,12 +83,12 @@ public class Seed {
         return user;
     }
     
-    private static Post seedUserPosts(User user, int currentPost) {
+    private static Post seedUserPosts(User user, int currentPost, IDataProvider provider) {
         String postTitle = user.getLogin() + " " + currentPost + " post title";
         String postContent = "hello, my name is " +  user.getName() + " and here is my " + currentPost + " post!";
         
         post = new Post(user.getId(), postTitle, postContent);
-        result = dataProvider.saveRecord(post);
+        result = provider.saveRecord(post);
             
         if (result.getStatus() != ResultType.SUCCESS.ordinal()) {
             log.info("Exit with status " + result.getStatus());
@@ -100,11 +100,11 @@ public class Seed {
         return post;
     }
     
-    private static Comment seedUserPostComments(Post post, User user, int currentComment){
+    private static Comment seedUserPostComments(Post post, User user, int currentComment, IDataProvider provider){
         String commentContent = "Hello, my name is " +  user.getName() + " and here is my " + currentComment + " comment for post with title: " + post.getTitle() + " !";
         
         comment = new Comment(post.getId(), user.getId(), commentContent);
-        result = dataProvider.saveRecord(comment);
+        result = provider.saveRecord(comment);
             
         if (result.getStatus() != ResultType.SUCCESS.ordinal()) {
             log.info("Exit with status " + result.getStatus());

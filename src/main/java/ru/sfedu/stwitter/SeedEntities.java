@@ -8,7 +8,8 @@ import java.util.List;
  */
 public class SeedEntities {
     public static List<String> planets = Arrays.asList(
-        "Mercury","Venus","Earth", "Mars", "Jupiter",
-        "Saturn", "Uranus", "Neptune", "Pluto"
+        "Mercury","Venus"
+//      "Earth", "Mars", "Jupiter",
+//      "Saturn", "Uranus", "Neptune", "Pluto"
     );
 }

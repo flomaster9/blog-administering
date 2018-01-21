@@ -289,6 +289,43 @@ public class PsqlProviderTest {
         } else {
             fail("Test failure with " + result.getStatus());
         }
-    }  
+    }
+
+    @Test
+    public void getNullUser() {
+        Result result = null;
+        int objectId = 1;
+        result = instance.getRecordById(objectId, EntityType.POST);
+        int userId = -1;
+
+        if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("Object with id " + objectId + " not found");
+            return;
+        } else if (!(result.getStatus() == ResultType.SUCCESS.ordinal())) {
+            fail("Test failure with " + result.getStatus());
+            return;
+        } else
+            log.info("find object with id " + result.getBean().getId());
+
+        switch(result.getBean().getType()) {
+            case POST:
+                userId = ((Post) result.getBean()).getUserId();
+                break;
+            case COMMENT:
+                userId = ((Comment) result.getBean()).getUserId();
+                break;
+        }
+
+        result = instance.getRecordById(userId, EntityType.USER);
+
+        if (result.getStatus() == ResultType.NOT_FOUND.ordinal()) {
+            log.info("User with id " + userId + " not exist");
+            return;
+        } else if (!(result.getStatus() == ResultType.SUCCESS.ordinal())) {
+            fail("Test failure with " + result.getStatus());
+            return;
+        } else
+            log.info("find user with id " + result.getBean().getId());
+    }
          
 }
